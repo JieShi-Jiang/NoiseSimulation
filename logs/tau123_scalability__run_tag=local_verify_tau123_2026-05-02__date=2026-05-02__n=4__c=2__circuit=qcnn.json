@@ -1,0 +1,93 @@
+{
+  "run_tag": "local_verify_tau123_2026-05-02",
+  "nqubits": 4,
+  "nclasses": 2,
+  "circuit": "qcnn",
+  "seed": 7,
+  "basis_bits": "0000",
+  "noise_types": [
+    "depolarizing"
+  ],
+  "noise_strengths": [
+    0.02
+  ],
+  "niters": 8,
+  "max_dm": 6,
+  "mixed_noise": false,
+  "cases": [
+    {
+      "ranked_outcome_indices": [
+        0,
+        1
+      ],
+      "ranked_probabilities": [
+        0.5429916065186262,
+        0.4570083934813738
+      ],
+      "clean_probabilities": [
+        0.6431069374084473,
+        0.35689306259155273
+      ],
+      "noisy_probabilities": [
+        0.5429916065186262,
+        0.4570083934813738
+      ],
+      "y0": 0.5429916065186262,
+      "y1": 0.4570083934813738,
+      "y2": 0.0,
+      "y3": 0.0,
+      "R_rho": 1.1881436189437444,
+      "sqrt_y0_over_y1": 1.0900200085061487,
+      "tau1": 0.03774231172479088,
+      "tau2": 90020008506.14867,
+      "tau3": 0.003408591392594584,
+      "kappa_star": -2097152.25,
+      "kappa_star_is_infinite": false,
+      "per_measurement": [
+        {
+          "rank": 0,
+          "measurement_index": 0,
+          "y_k": 0.5429916065186262,
+          "lambda_k_m": -3.5762786865234375e-07,
+          "lambda_k_M": 1.0000003576278687,
+          "Delta_k": 1.0000007152557373,
+          "kappa_k": -2796203.6666666665,
+          "kappa_k_is_infinite": false,
+          "tau_k_0_condition": true,
+          "tau_k_1_condition": true,
+          "tau_k_0": 0.04484328149426342,
+          "tau_k_1": 0.04888007407582064,
+          "pairwise_min_tau": 0.04484328149426342
+        },
+        {
+          "rank": 1,
+          "measurement_index": 1,
+          "y_k": 0.4570083934813738,
+          "lambda_k_m": -4.76837158203125e-07,
+          "lambda_k_M": 1.0000001192092896,
+          "Delta_k": 1.0000005960464478,
+          "kappa_k": -2097152.25,
+          "kappa_k_is_infinite": false,
+          "tau_k_0_condition": true,
+          "tau_k_1_condition": true,
+          "tau_k_0": 0.03774231172479088,
+          "tau_k_1": 0.04113987494729828,
+          "pairwise_min_tau": 0.03774231172479088
+        }
+      ],
+      "tau4_status": "not_implemented_for_large_n_mixed_state",
+      "tau5_status": "not_implemented_for_noisy_ansatz_mixed_state_attack",
+      "noise_type": "depolarizing",
+      "noise_strength": 0.02,
+      "probability_method": "exact_density_matrix",
+      "elapsed_seconds": 2.0668272972106934
+    }
+  ],
+  "notes": [
+    "tau1/tau2 use noisy-ansatz effective measurement extrema via TN + power iteration.",
+    "tau3 is reported only for depolarizing noise.",
+    "tau4/tau5 are intentionally marked unresolved here for mixed-state noisy-ansatz large-n runs."
+  ],
+  "output_json": "/home/young_isacs/work/NoiseSimulation/logs/tau123_scalability__run_tag=local_verify_tau123_2026-05-02__date=2026-05-02__n=4__c=2__circuit=qcnn.json",
+  "total_elapsed_seconds": 2.066861629486084
+}

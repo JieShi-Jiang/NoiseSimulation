@@ -1,0 +1,131 @@
+{
+  "run_tag": "local_verify_tau123_tn_2026-05-02",
+  "nqubits": 4,
+  "nclasses": 4,
+  "circuit": "qcnn",
+  "seed": 7,
+  "basis_bits": "0000",
+  "noise_types": [
+    "bit_flip"
+  ],
+  "noise_strengths": [
+    0.02
+  ],
+  "niters": 6,
+  "max_dm": 2,
+  "mixed_noise": false,
+  "cases": [
+    {
+      "ranked_outcome_indices": [
+        2,
+        0,
+        1,
+        3
+      ],
+      "ranked_probabilities": [
+        0.27715183074624195,
+        0.2690479865030105,
+        0.22737231643419648,
+        0.22642786631655112
+      ],
+      "clean_probabilities": [
+        0.32259558033012575,
+        0.18522976366262986,
+        0.3205113326534325,
+        0.1716633233538119
+      ],
+      "noisy_probabilities": [
+        0.2690479865030105,
+        0.22737231643419648,
+        0.27715183074624195,
+        0.22642786631655112
+      ],
+      "y0": 0.27715183074624195,
+      "y1": 0.2690479865030105,
+      "y2": 0.22737231643419648,
+      "y3": 0.22642786631655112,
+      "R_rho": 1.0301204418905427,
+      "sqrt_y0_over_y1": 1.014948492235218,
+      "tau1": 0.0033349034235380095,
+      "tau2": 0.0,
+      "tau3": null,
+      "kappa_star": null,
+      "kappa_star_is_infinite": true,
+      "per_measurement": [
+        {
+          "rank": 0,
+          "measurement_index": 2,
+          "y_k": 0.27715183074624195,
+          "lambda_k_m": 0.0,
+          "lambda_k_M": 1.0,
+          "Delta_k": 1.0,
+          "kappa_k": null,
+          "kappa_k_is_infinite": true,
+          "tau_k_0_condition": true,
+          "tau_k_1_condition": true,
+          "tau_k_0": 0.004081982506090099,
+          "tau_k_1": 0.00414300198988668,
+          "pairwise_min_tau": 0.004081982506090099
+        },
+        {
+          "rank": 1,
+          "measurement_index": 0,
+          "y_k": 0.2690479865030105,
+          "lambda_k_m": 0.0,
+          "lambda_k_M": 1.0,
+          "Delta_k": 1.0,
+          "kappa_k": null,
+          "kappa_k_is_infinite": true,
+          "tau_k_0_condition": true,
+          "tau_k_1_condition": true,
+          "tau_k_0": 0.003962626446475118,
+          "tau_k_1": 0.0040218617371413174,
+          "pairwise_min_tau": 0.003962626446475118
+        },
+        {
+          "rank": 2,
+          "measurement_index": 1,
+          "y_k": 0.22737231643419648,
+          "lambda_k_m": 5.960464477539063e-08,
+          "lambda_k_M": 1.0,
+          "Delta_k": 0.9999999403953552,
+          "kappa_k": 16777216.0,
+          "kappa_k_is_infinite": false,
+          "tau_k_0_condition": true,
+          "tau_k_1_condition": true,
+          "tau_k_0": 0.003348813792336852,
+          "tau_k_1": 0.0033988735093087876,
+          "pairwise_min_tau": 0.003348813792336852
+        },
+        {
+          "rank": 3,
+          "measurement_index": 3,
+          "y_k": 0.22642786631655112,
+          "lambda_k_m": 0.0,
+          "lambda_k_M": 1.0,
+          "Delta_k": 1.0,
+          "kappa_k": null,
+          "kappa_k_is_infinite": true,
+          "tau_k_0_condition": true,
+          "tau_k_1_condition": true,
+          "tau_k_0": 0.0033349034235380095,
+          "tau_k_1": 0.003384755201469967,
+          "pairwise_min_tau": 0.0033349034235380095
+        }
+      ],
+      "tau4_status": "not_implemented_for_large_n_mixed_state",
+      "tau5_status": "not_implemented_for_noisy_ansatz_mixed_state_attack",
+      "noise_type": "bit_flip",
+      "noise_strength": 0.02,
+      "probability_method": "tn_effective_measurement_basis_state",
+      "elapsed_seconds": 3.654529571533203
+    }
+  ],
+  "notes": [
+    "tau1/tau2 use noisy-ansatz effective measurement extrema via TN + power iteration.",
+    "tau3 is reported only for depolarizing noise.",
+    "tau4/tau5 are intentionally marked unresolved here for mixed-state noisy-ansatz large-n runs."
+  ],
+  "output_json": "/home/young_isacs/work/NoiseSimulation/logs/tau123_scalability__run_tag=local_verify_tau123_tn_2026-05-02__date=2026-05-02__n=4__c=4__circuit=qcnn.json",
+  "total_elapsed_seconds": 3.654560089111328
+}
