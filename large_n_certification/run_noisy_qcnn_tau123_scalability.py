@@ -42,6 +42,31 @@ os.environ.setdefault("MPLCONFIGDIR", "/tmp/matplotlib")
 os.environ.setdefault("XDG_CACHE_HOME", "/tmp")
 os.environ.setdefault("JAX_PLATFORMS", "cpu")
 
+
+def _bootstrap_cpu_threads_from_argv(default: int = 32) -> int:
+    """Set BLAS/OpenMP thread caps before importing JAX (via ``qlipschitz``). Reads ``--threads`` from argv."""
+    argv = sys.argv[1:]
+    n = int(default)
+    i = 0
+    while i < len(argv):
+        if argv[i] == "--threads" and i + 1 < len(argv):
+            n = int(argv[i + 1])
+            break
+        if argv[i].startswith("--threads="):
+            n = int(argv[i].split("=", 1)[1])
+            break
+        i += 1
+    n = max(1, int(n))
+    s = str(n)
+    os.environ["OMP_NUM_THREADS"] = s
+    os.environ["MKL_NUM_THREADS"] = s
+    os.environ["OPENBLAS_NUM_THREADS"] = s
+    os.environ["NUMEXPR_NUM_THREADS"] = s
+    return n
+
+
+_BOOTSTRAP_THREADS = _bootstrap_cpu_threads_from_argv()
+
 import cirq
 import numpy as np
 
@@ -90,6 +115,12 @@ def parse_args() -> argparse.Namespace:
     ap.add_argument("--mixed-noise", action="store_true", help="Use mixed bit-flip/depolarizing/phase-flip placement in QCNN mode.")
     ap.add_argument("--log-root", type=str, default=str(DEFAULT_LOG_ROOT))
     ap.add_argument("--run-tag", type=str, default="tau123_scalability")
+    ap.add_argument(
+        "--threads",
+        type=int,
+        default=_BOOTSTRAP_THREADS,
+        help="CPU thread hint for BLAS/OpenMP (applied before JAX import via argv bootstrap; default 32).",
+    )
     return ap.parse_args()
 
 
@@ -289,8 +320,9 @@ def finalize_tau12_report(
     tau1 = float(min(r1_candidates)) if r1_candidates else 0.0
     tau2 = float(safe_bound(sqrt_ratio - 1.0, kappa_star))
     tau3 = None
-    if str(noise_type) == "depolarizing":
-        tau3 = float(compute_tau3(clean_probs, float(noise_strength)))
+    # tau3 (depolarizing closed form) disabled — do not compute:
+    # if str(noise_type) == "depolarizing":
+    #     tau3 = float(compute_tau3(clean_probs, float(noise_strength)))
 
     return {
         "ranked_outcome_indices": ranked_indices,
@@ -344,9 +376,10 @@ def main() -> None:
         "max_dm": int(args.max_dm),
         "mixed_noise": bool(args.mixed_noise),
         "cases": [],
+        "threads": int(args.threads),
         "notes": [
             "tau1/tau2 use noisy-ansatz effective measurement extrema via TN + power iteration.",
-            "tau3 is reported only for depolarizing noise.",
+            "tau3 computation is disabled in this runner revision.",
             "tau4/tau5 are intentionally marked unresolved here for mixed-state noisy-ansatz large-n runs.",
         ],
     }
@@ -406,11 +439,10 @@ def main() -> None:
             report["elapsed_seconds"] = float(time.time() - t0)
             payload["cases"].append(report)
 
-            tau3_str = "n/a" if report["tau3"] is None else f"{float(report['tau3']):.6f}"
             print(
                 f"[tau123_scalability] n={args.nqubits} c={args.nclasses} noise={noise_type} p={strength:.3f} "
                 f"| method={prob_method} | tau1={float(report['tau1']):.6f} "
-                f"| tau2={float(report['tau2']):.6f} | tau3={tau3_str} "
+                f"| tau2={float(report['tau2']):.6f} "
                 f"| elapsed={float(report['elapsed_seconds']):.2f}s"
             )
 
