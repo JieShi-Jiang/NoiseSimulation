@@ -15,7 +15,11 @@ This folder hosts a **computational plan** for analysing quantum classifiers at 
 - `scheme.py` — tier summary (`LargeNCertificationPlan`).
 - `circuits/qcnn_random.py` — QCNN recursion + random layered circuit + noise (same spirit as repo QCNN script).
 - `estimation.py` — **noiseless** last-qubit probability via stripped unitaries; **noisy** probability for small $n$ via density matrix.
+- `mixed_state_tools.py` — exact small-$n$ mixed-state readout projectors, $\rho$-probabilities, density-matrix trace distance, and reusable $S/T/R$ partition helpers.
+- `trajectory_low_rank_tau45.py` — trajectory-sampled low-rank support model for mixed-state `\tau_4/\tau_5` surrogates at larger `n`.
 - `run_noisy_qcnn_tau123_scalability.py` — scalable noisy-ansatz `\tau_1/\tau_2` runner with depolarizing-only `\tau_3`, using TN probability contractions for computational-basis inputs when dense density matrices are too large.
+- `run_exact_mixed_state_str_validation.py` — exact small-$n$ mixed-state STR validation for noisy QCNN / random circuits; the intended bridge toward theorem-faithful `\tau_4`.
+- `run_noisy_qcnn_tau1245_trajectory.py` — `20/25q`-oriented runner that keeps `\tau_1/\tau_2` from the TN route and adds trajectory-support `\tau_4/\tau_5` approximations.
 - `demo.py` — runnable smoke test (`python -m large_n_certification.demo` from `NoiseSimulation/`).
 
 ## Commands
@@ -26,9 +30,12 @@ cd /path/to/NoiseSimulation
 python -m large_n_certification.demo --nqubits 8 --circuit qcnn --noise-p 0.01
 python -m large_n_certification.demo --nqubits 12 --circuit random --noise-p 0.02
 python -m large_n_certification.run_noisy_qcnn_tau123_scalability --nqubits 20 --nclasses 4 --noise-types depolarizing amplitude_damping bit_flip
+python -m large_n_certification.run_exact_mixed_state_str_validation --nqubits 8 --nclasses 4 --noise-type amplitude_damping --noise-strength 0.05
+python -m large_n_certification.run_noisy_qcnn_tau1245_trajectory --nqubits 20 --nclasses 4 --noise-types amplitude_damping bit_flip --trajectory-shots 12
 ```
 
 Use **`--max-dm`** only when $n$ is small enough for `DensityMatrixSimulator` (memory $\Theta(4^n)$).
+For `run_noisy_qcnn_tau1245_trajectory`, the `\tau_4/\tau_5` side is a **trajectory low-rank support approximation** rather than a dense exact mixed-state theorem evaluation.
 
 ## Next implementation hooks (not shipped)
 

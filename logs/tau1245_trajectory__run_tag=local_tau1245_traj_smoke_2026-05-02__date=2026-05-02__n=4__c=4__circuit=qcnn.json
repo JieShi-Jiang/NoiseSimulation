@@ -1,0 +1,887 @@
+{
+  "run_tag": "local_tau1245_traj_smoke_2026-05-02",
+  "nqubits": 4,
+  "nclasses": 4,
+  "circuit": "qcnn",
+  "seed": 7,
+  "basis_bits": "0000",
+  "noise_types": [
+    "amplitude_damping"
+  ],
+  "noise_strengths": [
+    0.05
+  ],
+  "niters": 12,
+  "mixed_noise": false,
+  "threads": 32,
+  "trajectory_shots": 4,
+  "support_basis_tol": 1e-08,
+  "attack_betas": [
+    0.01,
+    0.02,
+    0.03,
+    0.05,
+    0.07,
+    0.1,
+    0.12,
+    0.15,
+    0.2,
+    0.3,
+    0.4
+  ],
+  "random_trials": 4,
+  "pgd_steps": 4,
+  "pgd_step_size": 0.08,
+  "statevector_dtype": "complex64",
+  "cases": [
+    {
+      "noise_type": "amplitude_damping",
+      "noise_strength": 0.05,
+      "elapsed_seconds": 5.88838267326355,
+      "tau1": 0.00333484365623597,
+      "tau2": 0.0,
+      "tau4": 1.0,
+      "tau5": 1.0,
+      "tau5_attack_found": false,
+      "ranked_probabilities": [
+        0.277151740446168,
+        0.2690480443692075,
+        0.22737231034865668,
+        0.22642790483596778
+      ],
+      "ranked_outcome_indices": [
+        2,
+        0,
+        1,
+        3
+      ],
+      "clean_probabilities": [
+        0.26904796298051875,
+        0.22737234692719213,
+        0.27715180831056013,
+        0.22642788178172898
+      ],
+      "noisy_probabilities": [
+        0.2690480443692075,
+        0.22737231034865668,
+        0.277151740446168,
+        0.22642790483596778
+      ],
+      "support_probabilities": [
+        0.20920690348793347,
+        0.2302090639743897,
+        0.3337847191617912,
+        0.22679931337588577
+      ],
+      "support_vs_tn_l1": 0.11968214410445546,
+      "support_rank": 1,
+      "support_gram_eigenvalues_desc": [
+        4.000000476837159
+      ],
+      "str_summary_support": {
+        "n_classes": 4,
+        "labels": [
+          "|00>",
+          "|01>",
+          "|10>",
+          "|11>"
+        ],
+        "probabilities": [
+          0.20920690348793347,
+          0.2302090639743897,
+          0.3337847191617912,
+          0.22679931337588577
+        ],
+        "ranked_outcome_indices": [
+          2,
+          1,
+          3,
+          0
+        ],
+        "ranked_probabilities": [
+          0.3337847191617912,
+          0.2302090639743897,
+          0.22679931337588577,
+          0.20920690348793347
+        ],
+        "predicted_index": 2,
+        "competitor_index": 1,
+        "top_gap": 0.1035756551874015,
+        "rho_trace": 1.0000001192092898,
+        "rho_purity": 1.0000002384185938,
+        "eigenvalues_desc": [
+          1.0000001192092898
+        ],
+        "effective_rank": 1,
+        "S_norm_fro": 1.0000001192092898,
+        "T_norm_fro": 0.0,
+        "R_norm_fro": 0.0,
+        "S_trace": 1.0000001192092898,
+        "T_trace": 0.0,
+        "R_trace": 0.0,
+        "reconstruction_error_fro": 0.0,
+        "nonempty_bucket_count": 1,
+        "ledger": [
+          {
+            "eigen_index_desc": 0,
+            "eigenvalue": 1.0000001192092898,
+            "bucket": "S",
+            "pc": 0.3337847166518388,
+            "ps": 0.2302090622432925
+          }
+        ]
+      },
+      "tau12_report": {
+        "ranked_outcome_indices": [
+          2,
+          0,
+          1,
+          3
+        ],
+        "ranked_probabilities": [
+          0.277151740446168,
+          0.2690480443692075,
+          0.22737231034865668,
+          0.22642790483596778
+        ],
+        "clean_probabilities": [
+          0.26904796298051875,
+          0.22737234692719213,
+          0.27715180831056013,
+          0.22642788178172898
+        ],
+        "noisy_probabilities": [
+          0.2690480443692075,
+          0.22737231034865668,
+          0.277151740446168,
+          0.22642790483596778
+        ],
+        "y0": 0.277151740446168,
+        "y1": 0.2690480443692075,
+        "y2": 0.22737231034865668,
+        "y3": 0.22642790483596778,
+        "R_rho": 1.0301198847066886,
+        "sqrt_y0_over_y1": 1.0149482177464466,
+        "tau1": 0.00333484365623597,
+        "tau2": 0.0,
+        "tau3": null,
+        "kappa_star": null,
+        "kappa_star_is_infinite": true,
+        "per_measurement": [
+          {
+            "rank": 0,
+            "measurement_index": 2,
+            "y_k": 0.277151740446168,
+            "lambda_k_m": 0.0,
+            "lambda_k_M": 1.0,
+            "Delta_k": 1.0,
+            "kappa_k": null,
+            "kappa_k_is_infinite": true,
+            "tau_k_0_condition": true,
+            "tau_k_1_condition": true,
+            "tau_k_0": 0.004081907325473978,
+            "tau_k_1": 0.004142924564995975,
+            "pairwise_min_tau": 0.004081907325473978
+          },
+          {
+            "rank": 1,
+            "measurement_index": 0,
+            "y_k": 0.2690480443692075,
+            "lambda_k_m": 0.0,
+            "lambda_k_M": 1.0,
+            "Delta_k": 1.0,
+            "kappa_k": null,
+            "kappa_k_is_infinite": true,
+            "tau_k_0_condition": true,
+            "tau_k_1_condition": true,
+            "tau_k_0": 0.003962555607434217,
+            "tau_k_1": 0.004021788751486543,
+            "pairwise_min_tau": 0.003962555607434217
+          },
+          {
+            "rank": 2,
+            "measurement_index": 1,
+            "y_k": 0.22737231034865668,
+            "lambda_k_m": 0.0,
+            "lambda_k_M": 1.0,
+            "Delta_k": 1.0,
+            "kappa_k": null,
+            "kappa_k_is_infinite": true,
+            "tau_k_0_condition": true,
+            "tau_k_1_condition": true,
+            "tau_k_0": 0.003348752916824617,
+            "tau_k_1": 0.0033988108046043566,
+            "pairwise_min_tau": 0.003348752916824617
+          },
+          {
+            "rank": 3,
+            "measurement_index": 3,
+            "y_k": 0.22642790483596778,
+            "lambda_k_m": 0.0,
+            "lambda_k_M": 1.0,
+            "Delta_k": 1.0,
+            "kappa_k": null,
+            "kappa_k_is_infinite": true,
+            "tau_k_0_condition": true,
+            "tau_k_1_condition": true,
+            "tau_k_0": 0.00333484365623597,
+            "tau_k_1": 0.003384693625359738,
+            "pairwise_min_tau": 0.00333484365623597
+          }
+        ],
+        "tau4_status": "not_implemented_for_large_n_mixed_state",
+        "tau5_status": "not_implemented_for_noisy_ansatz_mixed_state_attack"
+      },
+      "tau4_report": {
+        "tau4": 1.0,
+        "tau4_method": "trivial_no_positive_competitor_space",
+        "tau4_gap": 0.12457782958790592,
+        "tau4_beta": 0.0,
+        "tau4_competitor": 0,
+        "tau4_state_trace_distance": 1.0,
+        "tau4_misclassification_margin": 0.0,
+        "tau4_candidates": [],
+        "per_competitor": [
+          {
+            "tau4": 1.0,
+            "tau4_method": "trivial_no_positive_competitor_space",
+            "tau4_gap": 0.12457782958790592,
+            "tau4_beta": 0.0,
+            "tau4_competitor": 0,
+            "tau4_state_trace_distance": 1.0,
+            "tau4_misclassification_margin": 0.0,
+            "tau4_candidates": []
+          },
+          {
+            "tau4": 1.0,
+            "tau4_method": "trivial_no_positive_competitor_space",
+            "tau4_gap": 0.10357566675572649,
+            "tau4_beta": 0.0,
+            "tau4_competitor": 1,
+            "tau4_state_trace_distance": 1.0,
+            "tau4_misclassification_margin": 0.0,
+            "tau4_candidates": []
+          },
+          {
+            "tau4": 1.0,
+            "tau4_method": "trivial_no_positive_competitor_space",
+            "tau4_gap": 0.10698541773506415,
+            "tau4_beta": 0.0,
+            "tau4_competitor": 3,
+            "tau4_state_trace_distance": 1.0,
+            "tau4_misclassification_margin": 0.0,
+            "tau4_candidates": []
+          }
+        ],
+        "predicted_index": 2,
+        "predicted_probabilities": [
+          0.20920690348793347,
+          0.2302090639743897,
+          0.3337847191617912,
+          0.22679931337588577
+        ],
+        "tau4_mode": "trajectory_low_rank_support_convex_mixture"
+      },
+      "tau5_report": {
+        "attack_mode": "trajectory_support_state_space",
+        "orig_pred": 2,
+        "orig_runner_up": 1,
+        "orig_probabilities": [
+          0.20920690348793347,
+          0.2302090639743897,
+          0.3337847191617912,
+          0.22679931337588577
+        ],
+        "tau_random": 1.0,
+        "tau_fgsm": 1.0,
+        "tau_pgd": 1.0,
+        "tau5_raw": null,
+        "tau5": 1.0,
+        "tau5_attack_found": false,
+        "random": [
+          {
+            "beta": 0.01,
+            "trial": 0,
+            "success": false,
+            "adv_pred": 2,
+            "trace_distance": 5.901450439438349e-10,
+            "probabilities": [
+              0.2092069034879335,
+              0.2302090639743897,
+              0.33378471916179125,
+              0.22679931337588577
+            ]
+          },
+          {
+            "beta": 0.01,
+            "trial": 1,
+            "success": false,
+            "adv_pred": 2,
+            "trace_distance": 5.901450439438349e-10,
+            "probabilities": [
+              0.2092069034879335,
+              0.2302090639743897,
+              0.33378471916179125,
+              0.22679931337588577
+            ]
+          },
+          {
+            "beta": 0.01,
+            "trial": 2,
+            "success": false,
+            "adv_pred": 2,
+            "trace_distance": 5.901450439438349e-10,
+            "probabilities": [
+              0.2092069034879335,
+              0.2302090639743897,
+              0.33378471916179125,
+              0.22679931337588577
+            ]
+          },
+          {
+            "beta": 0.01,
+            "trial": 3,
+            "success": false,
+            "adv_pred": 2,
+            "trace_distance": 5.901450439438349e-10,
+            "probabilities": [
+              0.2092069034879335,
+              0.2302090639743897,
+              0.33378471916179125,
+              0.22679931337588577
+            ]
+          },
+          {
+            "beta": 0.02,
+            "trial": 0,
+            "success": false,
+            "adv_pred": 2,
+            "trace_distance": 1.1687185663689093e-09,
+            "probabilities": [
+              0.20920690348793344,
+              0.23020906397438964,
+              0.33378471916179114,
+              0.2267993133758857
+            ]
+          },
+          {
+            "beta": 0.02,
+            "trial": 1,
+            "success": false,
+            "adv_pred": 2,
+            "trace_distance": 1.1687185663689093e-09,
+            "probabilities": [
+              0.20920690348793344,
+              0.23020906397438964,
+              0.33378471916179114,
+              0.2267993133758857
+            ]
+          },
+          {
+            "beta": 0.02,
+            "trial": 2,
+            "success": false,
+            "adv_pred": 2,
+            "trace_distance": 1.1687185663689093e-09,
+            "probabilities": [
+              0.20920690348793344,
+              0.23020906397438964,
+              0.33378471916179114,
+              0.2267993133758857
+            ]
+          },
+          {
+            "beta": 0.02,
+            "trial": 3,
+            "success": false,
+            "adv_pred": 2,
+            "trace_distance": 1.1687185663689093e-09,
+            "probabilities": [
+              0.20920690348793344,
+              0.23020906397438964,
+              0.33378471916179114,
+              0.2267993133758857
+            ]
+          },
+          {
+            "beta": 0.03,
+            "trial": 0,
+            "success": false,
+            "adv_pred": 2,
+            "trace_distance": 1.7360576309854991e-09,
+            "probabilities": [
+              0.20920690348793344,
+              0.23020906397438964,
+              0.33378471916179114,
+              0.22679931337588574
+            ]
+          },
+          {
+            "beta": 0.03,
+            "trial": 1,
+            "success": false,
+            "adv_pred": 2,
+            "trace_distance": 1.7360576309854991e-09,
+            "probabilities": [
+              0.20920690348793344,
+              0.23020906397438964,
+              0.33378471916179114,
+              0.22679931337588574
+            ]
+          },
+          {
+            "beta": 0.03,
+            "trial": 2,
+            "success": false,
+            "adv_pred": 2,
+            "trace_distance": 1.7360576309854991e-09,
+            "probabilities": [
+              0.20920690348793344,
+              0.23020906397438964,
+              0.33378471916179114,
+              0.22679931337588574
+            ]
+          },
+          {
+            "beta": 0.03,
+            "trial": 3,
+            "success": false,
+            "adv_pred": 2,
+            "trace_distance": 1.7360576309854991e-09,
+            "probabilities": [
+              0.20920690348793344,
+              0.23020906397438964,
+              0.33378471916179114,
+              0.22679931337588574
+            ]
+          },
+          {
+            "beta": 0.05,
+            "trial": 0,
+            "success": false,
+            "adv_pred": 2,
+            "trace_distance": 2.838316470743507e-09,
+            "probabilities": [
+              0.20920690348793344,
+              0.23020906397438967,
+              0.33378471916179114,
+              0.2267993133758857
+            ]
+          },
+          {
+            "beta": 0.05,
+            "trial": 1,
+            "success": false,
+            "adv_pred": 2,
+            "trace_distance": 2.838316470743507e-09,
+            "probabilities": [
+              0.20920690348793344,
+              0.23020906397438967,
+              0.33378471916179114,
+              0.2267993133758857
+            ]
+          },
+          {
+            "beta": 0.05,
+            "trial": 2,
+            "success": false,
+            "adv_pred": 2,
+            "trace_distance": 2.838316470743507e-09,
+            "probabilities": [
+              0.20920690348793344,
+              0.23020906397438967,
+              0.33378471916179114,
+              0.2267993133758857
+            ]
+          },
+          {
+            "beta": 0.05,
+            "trial": 3,
+            "success": false,
+            "adv_pred": 2,
+            "trace_distance": 2.838316470743507e-09,
+            "probabilities": [
+              0.20920690348793344,
+              0.23020906397438967,
+              0.33378471916179114,
+              0.2267993133758857
+            ]
+          },
+          {
+            "beta": 0.07,
+            "trial": 0,
+            "success": false,
+            "adv_pred": 2,
+            "trace_distance": 3.89936927192025e-09,
+            "probabilities": [
+              0.20920690348793344,
+              0.23020906397438967,
+              0.33378471916179114,
+              0.2267993133758857
+            ]
+          },
+          {
+            "beta": 0.07,
+            "trial": 1,
+            "success": false,
+            "adv_pred": 2,
+            "trace_distance": 3.89936927192025e-09,
+            "probabilities": [
+              0.20920690348793344,
+              0.23020906397438967,
+              0.33378471916179114,
+              0.2267993133758857
+            ]
+          },
+          {
+            "beta": 0.07,
+            "trial": 2,
+            "success": false,
+            "adv_pred": 2,
+            "trace_distance": 3.89936927192025e-09,
+            "probabilities": [
+              0.20920690348793344,
+              0.23020906397438967,
+              0.33378471916179114,
+              0.2267993133758857
+            ]
+          },
+          {
+            "beta": 0.07,
+            "trial": 3,
+            "success": false,
+            "adv_pred": 2,
+            "trace_distance": 3.89936927192025e-09,
+            "probabilities": [
+              0.20920690348793344,
+              0.23020906397438967,
+              0.33378471916179114,
+              0.2267993133758857
+            ]
+          },
+          {
+            "beta": 0.1,
+            "trial": 0,
+            "success": false,
+            "adv_pred": 2,
+            "trace_distance": 5.418604009932437e-09,
+            "probabilities": [
+              0.20920690348793347,
+              0.23020906397438967,
+              0.33378471916179114,
+              0.22679931337588574
+            ]
+          },
+          {
+            "beta": 0.1,
+            "trial": 1,
+            "success": false,
+            "adv_pred": 2,
+            "trace_distance": 5.418604009932437e-09,
+            "probabilities": [
+              0.20920690348793347,
+              0.23020906397438967,
+              0.33378471916179114,
+              0.22679931337588574
+            ]
+          },
+          {
+            "beta": 0.1,
+            "trial": 2,
+            "success": false,
+            "adv_pred": 2,
+            "trace_distance": 5.418604009932437e-09,
+            "probabilities": [
+              0.20920690348793347,
+              0.23020906397438967,
+              0.33378471916179114,
+              0.22679931337588574
+            ]
+          },
+          {
+            "beta": 0.1,
+            "trial": 3,
+            "success": false,
+            "adv_pred": 2,
+            "trace_distance": 5.418604009932437e-09,
+            "probabilities": [
+              0.20920690348793347,
+              0.23020906397438967,
+              0.33378471916179114,
+              0.22679931337588574
+            ]
+          },
+          {
+            "beta": 0.12,
+            "trial": 0,
+            "success": false,
+            "adv_pred": 2,
+            "trace_distance": 6.386211892639437e-09,
+            "probabilities": [
+              0.20920690348793344,
+              0.23020906397438967,
+              0.3337847191617912,
+              0.22679931337588574
+            ]
+          },
+          {
+            "beta": 0.12,
+            "trial": 1,
+            "success": false,
+            "adv_pred": 2,
+            "trace_distance": 6.386211892639437e-09,
+            "probabilities": [
+              0.20920690348793344,
+              0.23020906397438967,
+              0.3337847191617912,
+              0.22679931337588574
+            ]
+          },
+          {
+            "beta": 0.12,
+            "trial": 2,
+            "success": false,
+            "adv_pred": 2,
+            "trace_distance": 6.386211892639437e-09,
+            "probabilities": [
+              0.20920690348793344,
+              0.23020906397438967,
+              0.3337847191617912,
+              0.22679931337588574
+            ]
+          },
+          {
+            "beta": 0.12,
+            "trial": 3,
+            "success": false,
+            "adv_pred": 2,
+            "trace_distance": 6.38621200366174e-09,
+            "probabilities": [
+              0.20920690348793344,
+              0.23020906397438967,
+              0.33378471916179114,
+              0.22679931337588574
+            ]
+          },
+          {
+            "beta": 0.15,
+            "trial": 0,
+            "success": false,
+            "adv_pred": 2,
+            "trace_distance": 7.774518806513697e-09,
+            "probabilities": [
+              0.20920690348793344,
+              0.23020906397438967,
+              0.3337847191617912,
+              0.22679931337588574
+            ]
+          },
+          {
+            "beta": 0.15,
+            "trial": 1,
+            "success": false,
+            "adv_pred": 2,
+            "trace_distance": 7.774518806513697e-09,
+            "probabilities": [
+              0.20920690348793344,
+              0.23020906397438967,
+              0.3337847191617912,
+              0.22679931337588574
+            ]
+          },
+          {
+            "beta": 0.15,
+            "trial": 2,
+            "success": false,
+            "adv_pred": 2,
+            "trace_distance": 7.774518917536e-09,
+            "probabilities": [
+              0.20920690348793347,
+              0.2302090639743897,
+              0.33378471916179114,
+              0.22679931337588574
+            ]
+          },
+          {
+            "beta": 0.15,
+            "trial": 3,
+            "success": false,
+            "adv_pred": 2,
+            "trace_distance": 7.774518806513697e-09,
+            "probabilities": [
+              0.20920690348793344,
+              0.23020906397438967,
+              0.3337847191617912,
+              0.22679931337588574
+            ]
+          },
+          {
+            "beta": 0.2,
+            "trial": 0,
+            "success": false,
+            "adv_pred": 2,
+            "trace_distance": 9.93410742555767e-09,
+            "probabilities": [
+              0.20920690348793344,
+              0.23020906397438967,
+              0.33378471916179114,
+              0.22679931337588577
+            ]
+          },
+          {
+            "beta": 0.2,
+            "trial": 1,
+            "success": false,
+            "adv_pred": 2,
+            "trace_distance": 9.93410742555767e-09,
+            "probabilities": [
+              0.20920690348793344,
+              0.23020906397438967,
+              0.33378471916179114,
+              0.22679931337588577
+            ]
+          },
+          {
+            "beta": 0.2,
+            "trial": 2,
+            "success": false,
+            "adv_pred": 2,
+            "trace_distance": 9.93410742555767e-09,
+            "probabilities": [
+              0.20920690348793344,
+              0.23020906397438967,
+              0.33378471916179114,
+              0.22679931337588577
+            ]
+          },
+          {
+            "beta": 0.2,
+            "trial": 3,
+            "success": false,
+            "adv_pred": 2,
+            "trace_distance": 9.93410742555767e-09,
+            "probabilities": [
+              0.20920690348793344,
+              0.23020906397438967,
+              0.33378471916179114,
+              0.22679931337588577
+            ]
+          },
+          {
+            "beta": 0.3,
+            "trial": 0,
+            "success": false,
+            "adv_pred": 2,
+            "trace_distance": 1.3754918093411561e-08,
+            "probabilities": [
+              0.20920690348793344,
+              0.23020906397438964,
+              0.3337847191617911,
+              0.2267993133758857
+            ]
+          },
+          {
+            "beta": 0.3,
+            "trial": 1,
+            "success": false,
+            "adv_pred": 2,
+            "trace_distance": 1.3754918093411561e-08,
+            "probabilities": [
+              0.20920690348793344,
+              0.23020906397438964,
+              0.3337847191617911,
+              0.2267993133758857
+            ]
+          },
+          {
+            "beta": 0.3,
+            "trial": 2,
+            "success": false,
+            "adv_pred": 2,
+            "trace_distance": 1.3754918093411561e-08,
+            "probabilities": [
+              0.20920690348793344,
+              0.23020906397438964,
+              0.3337847191617911,
+              0.2267993133758857
+            ]
+          },
+          {
+            "beta": 0.3,
+            "trial": 3,
+            "success": false,
+            "adv_pred": 2,
+            "trace_distance": 1.3754918093411561e-08,
+            "probabilities": [
+              0.20920690348793344,
+              0.23020906397438964,
+              0.3337847191617911,
+              0.2267993133758857
+            ]
+          },
+          {
+            "beta": 0.4,
+            "trial": 0,
+            "success": false,
+            "adv_pred": 2,
+            "trace_distance": 1.7029898491394135e-08,
+            "probabilities": [
+              0.20920690348793344,
+              0.23020906397438964,
+              0.3337847191617911,
+              0.2267993133758857
+            ]
+          },
+          {
+            "beta": 0.4,
+            "trial": 1,
+            "success": false,
+            "adv_pred": 2,
+            "trace_distance": 1.7029898491394135e-08,
+            "probabilities": [
+              0.20920690348793344,
+              0.23020906397438964,
+              0.3337847191617911,
+              0.2267993133758857
+            ]
+          },
+          {
+            "beta": 0.4,
+            "trial": 2,
+            "success": false,
+            "adv_pred": 2,
+            "trace_distance": 1.7029898491394135e-08,
+            "probabilities": [
+              0.20920690348793344,
+              0.23020906397438964,
+              0.3337847191617911,
+              0.2267993133758857
+            ]
+          },
+          {
+            "beta": 0.4,
+            "trial": 3,
+            "success": false,
+            "adv_pred": 2,
+            "trace_distance": 1.7029898491394135e-08,
+            "probabilities": [
+              0.20920690348793344,
+              0.23020906397438964,
+              0.3337847191617911,
+              0.2267993133758857
+            ]
+          }
+        ],
+        "fgsm": [],
+        "pgd": []
+      }
+    }
+  ],
+  "notes": [
+    "tau1/tau2 use the same TN spectral route as run_noisy_qcnn_tau123_scalability.",
+    "tau4 uses a low-rank trajectory approximation of rho and a convex-mixture constructive state in support space.",
+    "tau5 is a state-space empirical surrogate on the same support, with random / fgsm / pgd attack records.",
+    "These tau4/tau5 values are trajectory-support approximations, not exact dense-rho theorem outputs."
+  ],
+  "elapsed_seconds_total": 5.888409852981567
+}

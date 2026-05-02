@@ -32,39 +32,11 @@ _REPO_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 if _REPO_ROOT not in sys.path:
     sys.path.insert(0, _REPO_ROOT)
 
-
-def projector_labels() -> list[str]:
-    return ["|00⟩", "|01⟩", "|10⟩", "|11⟩"]
-
-
-def qubit_projector(bit: int) -> np.ndarray:
-    assert bit in (0, 1)
-    if bit == 0:
-        return np.array([[1.0, 0.0], [0.0, 0.0]], dtype=np.complex128)
-    return np.array([[0.0, 0.0], [0.0, 1.0]], dtype=np.complex128)
-
-
-def projector_last_two_computational(
-    k: int,
-    sorted_qubits: list[cirq.GridQubit],
-) -> np.ndarray:
-    assert 0 <= k <= 3
-    qa, qb = sorted_qubits[-2], sorted_qubits[-1]
-    ba, bb = k // 2, k % 2
-    Pa, Pb = qubit_projector(ba), qubit_projector(bb)
-    mats = [np.eye(2, dtype=np.complex128) for _ in sorted_qubits]
-    mats[sorted_qubits.index(qa)] = Pa
-    mats[sorted_qubits.index(qb)] = Pb
-    op = mats[0]
-    for m in mats[1:]:
-        op = np.kron(op, m)
-    return op
-
-
-def probs_last_two_from_rho(rho: np.ndarray, sorted_qubits: list[cirq.GridQubit]) -> np.ndarray:
-    return np.array(
-        [np.real(np.trace(projector_last_two_computational(k, sorted_qubits) @ rho)) for k in range(4)]
-    )
+from large_n_certification.mixed_state_tools import (
+    projector_labels,
+    probabilities_last_readout_from_rho,
+    summarize_str_partition,
+)
 
 
 def embed_prefix_then_last_two(
@@ -101,62 +73,17 @@ def simulate_qcnn_pure(
     return np.asarray(psi).flatten()
 
 
-def str_partition_mixed(
-    rho: np.ndarray,
-    sorted_qubits: list[cirq.GridQubit],
-    c: int,
-    s: int,
-    *,
-    ev_tol: float = 1e-8,
-    cmp_tol: float = 1e-9,
-) -> tuple[np.ndarray, np.ndarray, np.ndarray, list[tuple[float, str, float, float]]]:
-    dim = rho.shape[0]
-    w, V = np.linalg.eigh(rho)
-    idx_desc = np.argsort(np.real(w))[::-1]
-    w = np.real(w[idx_desc])
-    V = V[:, idx_desc]
-
-    floor = max(ev_tol, np.max(w) * 1e-12)
-    Pc = projector_last_two_computational(c, sorted_qubits)
-    Ps = projector_last_two_computational(s, sorted_qubits)
-
-    Z = np.zeros_like(rho)
-    S, T, R = Z.copy(), Z.copy(), Z.copy()
-    ledger: list[tuple[float, str, float, float]] = []
-
-    for ell in range(dim):
-        lam = float(w[ell])
-        if lam < floor:
-            continue
-        phi = V[:, ell]
-        pc = float(np.real(phi.conj().T @ Pc @ phi))
-        ps = float(np.real(phi.conj().T @ Ps @ phi))
-        piece = lam * np.outer(phi, phi.conj())
-
-        if pc > ps + cmp_tol:
-            bucket, target = "S", S
-        elif pc < ps - cmp_tol:
-            bucket, target = "T", T
-        else:
-            bucket, target = "R", R
-
-        target += piece
-        ledger.append((lam, bucket, pc, ps))
-
-    return S, T, R, ledger
-
-
 def report_block(title: str, rho: np.ndarray, qubits: list[cirq.GridQubit], labels: list[str]) -> None:
     print(title)
     print("—" * len(title))
-    y = probs_last_two_from_rho(rho, qubits)
-    order = np.argsort(y)[::-1]
-    c, s = int(order[0]), int(order[1])
+    y = probabilities_last_readout_from_rho(rho, qubits, n_classes=4)
+    summary = summarize_str_partition(rho, qubits, n_classes=4)
+    c = int(summary["predicted_index"])
+    s = int(summary["competitor_index"])
 
-    w_all = np.linalg.eigvalsh(rho)
-    rank_eff = int(np.sum(w_all > 1e-8))
-    print(f"  eigenvalues (top 6 desc): {np.sort(w_all)[::-1][:6]}")
-    print(f"  numerical rank (>1e-8): {rank_eff}")
+    eig_desc = np.asarray(summary["eigenvalues_desc"], dtype=float)
+    print(f"  eigenvalues (top 6 desc): {eig_desc[:6]}")
+    print(f"  numerical rank (>1e-8): {int(summary['effective_rank'])}")
 
     print("  Class probs y_k = Tr(P_k ρ):")
     for k in range(4):
@@ -164,18 +91,20 @@ def report_block(title: str, rho: np.ndarray, qubits: list[cirq.GridQubit], labe
 
     print(f"  global prediction: c={c} ({labels[c]}),  s={s} ({labels[s]})")
 
-    S, T, R, ledger = str_partition_mixed(rho, qubits, c, s)
-
     print("  STR (per eigenvector of ρ, bucket by ⟨P_c⟩ vs ⟨P_s⟩ on |φ_ℓ⟩):")
-    for lam, bucket, pc, ps in ledger:
-        print(f"    λ={lam:.6e} → {bucket}:  ⟨P_c⟩={pc:.6f},  ⟨P_s⟩={ps:.6f}")
+    for row in summary["ledger"]:
+        print(
+            f"    λ={float(row['eigenvalue']):.6e} → {row['bucket']}:  "
+            f"⟨P_c⟩={float(row['pc']):.6f},  ⟨P_s⟩={float(row['ps']):.6f}"
+        )
 
-    ns, nt, nr = np.linalg.norm(S, "fro"), np.linalg.norm(T, "fro"), np.linalg.norm(R, "fro")
-    print(f"  ‖S‖_F={ns:.8f}  ‖T‖_F={nt:.8f}  ‖R‖_F={nr:.8f}")
-    err = np.linalg.norm(S + T + R - rho, "fro")
-    print(f"  ‖S+T+R−ρ‖_F={err:.3e}")
-    nz = sum(1 for x in (ns, nt, nr) if x > 1e-6)
-    print(f"  nonempty buckets among {{S,T,R}}: {nz}/3")
+    print(
+        f"  ‖S‖_F={float(summary['S_norm_fro']):.8f}  "
+        f"‖T‖_F={float(summary['T_norm_fro']):.8f}  "
+        f"‖R‖_F={float(summary['R_norm_fro']):.8f}"
+    )
+    print(f"  ‖S+T+R−ρ‖_F={float(summary['reconstruction_error_fro']):.3e}")
+    print(f"  nonempty buckets among {{S,T,R}}: {int(summary['nonempty_bucket_count'])}/3")
     print()
 
 
@@ -193,7 +122,7 @@ def main() -> None:
 
     n = 8
     qubits = sorted(cirq.GridQubit.rect(1, n))
-    labels = projector_labels()
+    labels = projector_labels(4)
 
     print("=== Part A — mixed state from two independent QCNN branches ===\n")
     p_mix = float(0.25 * (3.0 - np.sqrt(5.0)))  # (3−√5)/4

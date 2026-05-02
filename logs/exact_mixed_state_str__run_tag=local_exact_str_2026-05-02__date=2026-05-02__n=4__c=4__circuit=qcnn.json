@@ -1,0 +1,131 @@
+{
+  "run_tag": "local_exact_str_2026-05-02",
+  "nqubits": 4,
+  "nclasses": 4,
+  "circuit": "qcnn",
+  "noise_type": "amplitude_damping",
+  "noise_strength": 0.05,
+  "seed": 7,
+  "random_depth": 4,
+  "full_size": null,
+  "mixed_noise": false,
+  "rho_dim": 16,
+  "elapsed_seconds": 0.048449039459228516,
+  "tau4_status": "mixed_state_str_ready_constructive_upper_bound_pending",
+  "tau5_status": "density_matrix_metric_pending_attack_loop",
+  "notes": [
+    "This runner validates exact mixed-state S/T/R ingredients from a dense rho.",
+    "It is the intended bridge between the old pure-state tau4 shortcut and a theorem-faithful noisy-ansatz route.",
+    "It does not yet construct the final tau4 upper bound or run a mixed-state tau5 attack search."
+  ],
+  "str_summary": {
+    "n_classes": 4,
+    "labels": [
+      "|00>",
+      "|01>",
+      "|10>",
+      "|11>"
+    ],
+    "probabilities": [
+      0.2092069154325157,
+      0.23020910586510968,
+      0.33378467442987064,
+      0.226799304272504
+    ],
+    "ranked_outcome_indices": [
+      2,
+      1,
+      3,
+      0
+    ],
+    "ranked_probabilities": [
+      0.33378467442987064,
+      0.23020910586510968,
+      0.226799304272504,
+      0.2092069154325157
+    ],
+    "predicted_index": 2,
+    "competitor_index": 1,
+    "top_gap": 0.10357556856476097,
+    "rho_trace": 1.000000387430191,
+    "rho_purity": 1.0000007498743373,
+    "eigenvalues_desc": [
+      1.0000003749370918,
+      5.651658823290944e-08,
+      3.885235820786891e-08,
+      3.118777466456523e-08,
+      2.2268100830401823e-08,
+      1.8613083064069436e-08,
+      1.144321466229934e-08,
+      7.153558599798963e-09,
+      2.346064099186512e-10,
+      -3.155335730276307e-09,
+      -9.208047606100006e-09,
+      -1.283421130745015e-08,
+      -2.061193767928509e-08,
+      -3.130524552771179e-08,
+      -3.856731405969116e-08,
+      -5.809409338736412e-08
+    ],
+    "effective_rank": 7,
+    "S_norm_fro": 1.0000003749370925,
+    "T_norm_fro": 7.447110622708695e-08,
+    "R_norm_fro": 0.0,
+    "S_trace": 1.0000004175680814,
+    "T_trace": 1.3625013038184048e-07,
+    "R_trace": 0.0,
+    "reconstruction_error_fro": 8.110438632169601e-08,
+    "nonempty_bucket_count": 1,
+    "ledger": [
+      {
+        "eigen_index_desc": 0,
+        "eigenvalue": 1.0000003749370916,
+        "bucket": "S",
+        "pc": 0.3337846941636116,
+        "ps": 0.23020911161792462
+      },
+      {
+        "eigen_index_desc": 1,
+        "eigenvalue": 5.6516588239453326e-08,
+        "bucket": "T",
+        "pc": 0.20117471922646485,
+        "ps": 0.24504936182539927
+      },
+      {
+        "eigen_index_desc": 2,
+        "eigenvalue": 3.885235822942209e-08,
+        "bucket": "T",
+        "pc": 0.12063702025603207,
+        "ps": 0.18376475564812883
+      },
+      {
+        "eigen_index_desc": 3,
+        "eigenvalue": 3.1187774680982814e-08,
+        "bucket": "S",
+        "pc": 0.36881569636953904,
+        "ps": 0.07741018365584725
+      },
+      {
+        "eigen_index_desc": 4,
+        "eigenvalue": 2.2268100835801595e-08,
+        "bucket": "T",
+        "pc": 0.1530333972583662,
+        "ps": 0.37588955430242116
+      },
+      {
+        "eigen_index_desc": 5,
+        "eigenvalue": 1.8613083077163463e-08,
+        "bucket": "T",
+        "pc": 0.2880695961977447,
+        "ps": 0.33846743313313277
+      },
+      {
+        "eigen_index_desc": 6,
+        "eigenvalue": 1.1443214667162765e-08,
+        "bucket": "S",
+        "pc": 0.23287597676646615,
+        "ps": 0.1629827340225115
+      }
+    ]
+  }
+}

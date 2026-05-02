@@ -1,0 +1,1751 @@
+{
+  "run_tag": "local_tau1245_traj_rankprobe_2026-05-02",
+  "nqubits": 8,
+  "nclasses": 4,
+  "circuit": "qcnn",
+  "seed": 7,
+  "basis_bits": "00000000",
+  "noise_types": [
+    "amplitude_damping"
+  ],
+  "noise_strengths": [
+    0.2
+  ],
+  "niters": 8,
+  "mixed_noise": false,
+  "threads": 32,
+  "trajectory_shots": 24,
+  "support_basis_tol": 1e-08,
+  "attack_betas": [
+    0.01,
+    0.02,
+    0.03,
+    0.05,
+    0.07,
+    0.1,
+    0.12,
+    0.15,
+    0.2,
+    0.3,
+    0.4
+  ],
+  "random_trials": 4,
+  "pgd_steps": 4,
+  "pgd_step_size": 0.08,
+  "statevector_dtype": "complex64",
+  "cases": [
+    {
+      "noise_type": "amplitude_damping",
+      "noise_strength": 0.2,
+      "elapsed_seconds": 11.689106225967407,
+      "tau1": 0.0009454240533249379,
+      "tau2": 0.00012195207356602782,
+      "tau4": 0.05545058073169591,
+      "tau5": 0.061199570827222285,
+      "tau5_attack_found": true,
+      "ranked_probabilities": [
+        0.3141937928430787,
+        0.31114906801570275,
+        0.21992990016101602,
+        0.15472723898020255
+      ],
+      "ranked_outcome_indices": [
+        3,
+        1,
+        0,
+        2
+      ],
+      "clean_probabilities": [
+        0.21089092834605225,
+        0.36766319886131893,
+        0.06514245385786965,
+        0.35630341893475914
+      ],
+      "noisy_probabilities": [
+        0.21992990016101602,
+        0.31114906801570275,
+        0.15472723898020255,
+        0.3141937928430787
+      ],
+      "support_probabilities": [
+        0.24143385626978806,
+        0.2128484146786465,
+        0.25975331109542305,
+        0.2859644179561425
+      ],
+      "support_vs_tn_l1": 0.25306002656391813,
+      "support_rank": 13,
+      "support_gram_eigenvalues_desc": [
+        9.509540644620586,
+        2.9822174218324444,
+        2.7760983123066825,
+        2.2457525891062615,
+        1.5945996478576328,
+        1.2090255370181937,
+        0.974029031478973,
+        0.6867434199434074,
+        0.6549594921900668,
+        0.44219221640602546,
+        0.38746077270445745,
+        0.3045263868014968,
+        0.23285637547776494
+      ],
+      "str_summary_support": {
+        "n_classes": 4,
+        "labels": [
+          "|00>",
+          "|01>",
+          "|10>",
+          "|11>"
+        ],
+        "probabilities": [
+          0.24143385626978806,
+          0.2128484146786465,
+          0.25975331109542305,
+          0.2859644179561425
+        ],
+        "ranked_outcome_indices": [
+          3,
+          2,
+          0,
+          1
+        ],
+        "ranked_probabilities": [
+          0.2859644179561425,
+          0.25975331109542305,
+          0.24143385626978806,
+          0.2128484146786465
+        ],
+        "predicted_index": 3,
+        "competitor_index": 2,
+        "top_gap": 0.02621110686071948,
+        "rho_trace": 1.0000000769893331,
+        "rho_purity": 0.2055929523851637,
+        "eigenvalues_desc": [
+          0.3962308601925244,
+          0.12425905924301851,
+          0.11567076301277844,
+          0.09357302454609423,
+          0.06644165199406803,
+          0.050376064042424736,
+          0.04058454297829054,
+          0.02861430916430864,
+          0.027289978841252782,
+          0.018424675683584395,
+          0.016144198862685727,
+          0.012688599450062366,
+          0.009702348978240205
+        ],
+        "effective_rank": 13,
+        "S_norm_fro": 0.21477470521117828,
+        "T_norm_fro": 0.3993304125490759,
+        "R_norm_fro": 0.0,
+        "S_trace": 0.5345703646542094,
+        "T_trace": 0.4654297123351236,
+        "R_trace": 0.0,
+        "reconstruction_error_fro": 0.0,
+        "nonempty_bucket_count": 2,
+        "ledger": [
+          {
+            "eigen_index_desc": 0,
+            "eigenvalue": 0.3962308601925244,
+            "bucket": "T",
+            "pc": 0.2785083337640121,
+            "ps": 0.2890250831210711
+          },
+          {
+            "eigen_index_desc": 1,
+            "eigenvalue": 0.12425905924301851,
+            "bucket": "S",
+            "pc": 0.2969634740843059,
+            "ps": 0.22770572338775405
+          },
+          {
+            "eigen_index_desc": 2,
+            "eigenvalue": 0.11567076301277844,
+            "bucket": "S",
+            "pc": 0.2902363201279923,
+            "ps": 0.2739320382944692
+          },
+          {
+            "eigen_index_desc": 3,
+            "eigenvalue": 0.09357302454609423,
+            "bucket": "S",
+            "pc": 0.3113110982034629,
+            "ps": 0.236665186858193
+          },
+          {
+            "eigen_index_desc": 4,
+            "eigenvalue": 0.06644165199406803,
+            "bucket": "S",
+            "pc": 0.3142989674516779,
+            "ps": 0.2842941228781262
+          },
+          {
+            "eigen_index_desc": 5,
+            "eigenvalue": 0.050376064042424736,
+            "bucket": "S",
+            "pc": 0.3225132127903513,
+            "ps": 0.16018828635501842
+          },
+          {
+            "eigen_index_desc": 6,
+            "eigenvalue": 0.04058454297829054,
+            "bucket": "T",
+            "pc": 0.23966649769939644,
+            "ps": 0.2661605056863055
+          },
+          {
+            "eigen_index_desc": 7,
+            "eigenvalue": 0.02861430916430864,
+            "bucket": "T",
+            "pc": 0.23013310079479632,
+            "ps": 0.24652255100434206
+          },
+          {
+            "eigen_index_desc": 8,
+            "eigenvalue": 0.027289978841252782,
+            "bucket": "S",
+            "pc": 0.2559020562871394,
+            "ps": 0.23610990201932902
+          },
+          {
+            "eigen_index_desc": 9,
+            "eigenvalue": 0.018424675683584395,
+            "bucket": "S",
+            "pc": 0.29210918791332285,
+            "ps": 0.19322926930171044
+          },
+          {
+            "eigen_index_desc": 10,
+            "eigenvalue": 0.016144198862685727,
+            "bucket": "S",
+            "pc": 0.2676862846785934,
+            "ps": 0.22474199391028554
+          },
+          {
+            "eigen_index_desc": 11,
+            "eigenvalue": 0.012688599450062366,
+            "bucket": "S",
+            "pc": 0.2881025812143285,
+            "ps": 0.2262060400637549
+          },
+          {
+            "eigen_index_desc": 12,
+            "eigenvalue": 0.009702348978240205,
+            "bucket": "S",
+            "pc": 0.22923670126416845,
+            "ps": 0.1844834538977647
+          }
+        ]
+      },
+      "tau12_report": {
+        "ranked_outcome_indices": [
+          3,
+          1,
+          0,
+          2
+        ],
+        "ranked_probabilities": [
+          0.3141937928430787,
+          0.31114906801570275,
+          0.21992990016101602,
+          0.15472723898020255
+        ],
+        "clean_probabilities": [
+          0.21089092834605225,
+          0.36766319886131893,
+          0.06514245385786965,
+          0.35630341893475914
+        ],
+        "noisy_probabilities": [
+          0.21992990016101602,
+          0.31114906801570275,
+          0.15472723898020255,
+          0.3141937928430787
+        ],
+        "y0": 0.3141937928430787,
+        "y1": 0.31114906801570275,
+        "y2": 0.21992990016101602,
+        "y3": 0.15472723898020255,
+        "R_rho": 1.0097854216526925,
+        "sqrt_y0_over_y1": 1.0048807997233764,
+        "tau1": 0.0009454240533249379,
+        "tau2": 0.00012195207356602782,
+        "tau3": null,
+        "kappa_star": 40.02227744601507,
+        "kappa_star_is_infinite": false,
+        "per_measurement": [
+          {
+            "rank": 0,
+            "measurement_index": 3,
+            "y_k": 0.3141937928430787,
+            "lambda_k_m": 0.018924236297607422,
+            "lambda_k_M": 0.7573910355567932,
+            "Delta_k": 0.7384667992591858,
+            "kappa_k": 40.02227744601507,
+            "kappa_k_is_infinite": false,
+            "tau_k_0_condition": true,
+            "tau_k_1_condition": true,
+            "tau_k_0": 0.002066536428999939,
+            "tau_k_1": 0.0020766227794309423,
+            "pairwise_min_tau": 0.002066536428999939
+          },
+          {
+            "rank": 1,
+            "measurement_index": 1,
+            "y_k": 0.31114906801570275,
+            "lambda_k_m": 0.054398536682128906,
+            "lambda_k_M": 0.894503653049469,
+            "Delta_k": 0.8401051163673401,
+            "kappa_k": 16.443524175592994,
+            "kappa_k_is_infinite": false,
+            "tau_k_0_condition": true,
+            "tau_k_1_condition": true,
+            "tau_k_0": 0.0017989177788639314,
+            "tau_k_1": 0.0018076979362613814,
+            "pairwise_min_tau": 0.0017989177788639314
+          },
+          {
+            "rank": 2,
+            "measurement_index": 0,
+            "y_k": 0.21992990016101602,
+            "lambda_k_m": 0.02324777841567993,
+            "lambda_k_M": 0.7588009238243103,
+            "Delta_k": 0.7355531454086304,
+            "kappa_k": 32.63971766491553,
+            "kappa_k_is_infinite": false,
+            "tau_k_0_condition": true,
+            "tau_k_1_condition": true,
+            "tau_k_0": 0.001452267636294597,
+            "tau_k_1": 0.0014593558637720873,
+            "pairwise_min_tau": 0.001452267636294597
+          },
+          {
+            "rank": 3,
+            "measurement_index": 2,
+            "y_k": 0.15472723898020255,
+            "lambda_k_m": 0.04699254035949707,
+            "lambda_k_M": 0.8418999910354614,
+            "Delta_k": 0.7949074506759644,
+            "kappa_k": 17.915609256168157,
+            "kappa_k_is_infinite": false,
+            "tau_k_0_condition": true,
+            "tau_k_1_condition": true,
+            "tau_k_0": 0.0009454240533249379,
+            "tau_k_1": 0.0009500384787828765,
+            "pairwise_min_tau": 0.0009454240533249379
+          }
+        ],
+        "tau4_status": "not_implemented_for_large_n_mixed_state",
+        "tau5_status": "not_implemented_for_noisy_ansatz_mixed_state_attack"
+      },
+      "tau4_report": {
+        "tau4": 0.05545058073169591,
+        "tau4_method": "top_positive_diff_eigenvector",
+        "tau4_gap": 0.026211108162511598,
+        "tau4_beta": 0.06300997764327623,
+        "tau4_competitor": 2,
+        "tau4_state_trace_distance": 0.9354791540732547,
+        "tau4_misclassification_margin": -5.551115123125783e-17,
+        "tau4_denom": 0.4159834544126136,
+        "tau4_candidates": [
+          {
+            "tau4": 0.14225369385445288,
+            "tau4_method": "principal_rho_projected_to_positive_diff",
+            "tau4_gap": 0.026211108162511598,
+            "tau4_beta": 0.23501777569726623,
+            "tau4_competitor": 2,
+            "tau4_state_trace_distance": 0.7475427764883308,
+            "tau4_misclassification_margin": -5.551115123125783e-17,
+            "tau4_denom": 0.1115281943450735
+          },
+          {
+            "tau4": 0.05545058073169591,
+            "tau4_method": "top_positive_diff_eigenvector",
+            "tau4_gap": 0.026211108162511598,
+            "tau4_beta": 0.06300997764327623,
+            "tau4_competitor": 2,
+            "tau4_state_trace_distance": 0.9354791540732547,
+            "tau4_misclassification_margin": -5.551115123125783e-17,
+            "tau4_denom": 0.4159834544126136
+          },
+          {
+            "tau4": 0.3936307493229385,
+            "tau4_method": "positive_diff_eigenvector_0",
+            "tau4_gap": 0.026211108162511598,
+            "tau4_beta": 0.8105686612491609,
+            "tau4_competitor": 2,
+            "tau4_state_trace_distance": 0.8792537053305355,
+            "tau4_misclassification_margin": -5.551115123125783e-17,
+            "tau4_denom": 0.03233669078954751
+          },
+          {
+            "tau4": 0.3408200137053773,
+            "tau4_method": "positive_diff_eigenvector_1",
+            "tau4_gap": 0.026211108162511598,
+            "tau4_beta": 0.6091633725288593,
+            "tau4_competitor": 2,
+            "tau4_state_trace_distance": 0.9003086978173411,
+            "tau4_misclassification_margin": 0.0,
+            "tau4_denom": 0.04302804361611521
+          },
+          {
+            "tau4": 0.21519586981730182,
+            "tau4_method": "positive_diff_eigenvector_2",
+            "tau4_gap": 0.026211108162511598,
+            "tau4_beta": 0.3171938118006988,
+            "tau4_competitor": 2,
+            "tau4_state_trace_distance": 0.8936324023449763,
+            "tau4_misclassification_margin": -5.551115123125783e-17,
+            "tau4_denom": 0.08263436166585976
+          },
+          {
+            "tau4": 0.12646137575187383,
+            "tau4_method": "positive_diff_eigenvector_3",
+            "tau4_gap": 0.026211108162511598,
+            "tau4_beta": 0.15750455085652712,
+            "tau4_competitor": 2,
+            "tau4_state_trace_distance": 0.9293675461714769,
+            "tau4_misclassification_margin": 5.551115123125783e-17,
+            "tau4_denom": 0.16641492591783985
+          },
+          {
+            "tau4": 0.10000325407023207,
+            "tau4_method": "positive_diff_eigenvector_4",
+            "tau4_gap": 0.026211108162511598,
+            "tau4_beta": 0.11506952802132252,
+            "tau4_competitor": 2,
+            "tau4_state_trace_distance": 0.9690713365577288,
+            "tau4_misclassification_margin": -5.551115123125783e-17,
+            "tau4_denom": 0.227784962823995
+          }
+        ],
+        "per_competitor": [
+          {
+            "tau4": 0.07151091595424824,
+            "tau4_method": "top_positive_diff_eigenvector",
+            "tau4_gap": 0.04453056389799451,
+            "tau4_beta": 0.08723083020725035,
+            "tau4_competitor": 0,
+            "tau4_state_trace_distance": 0.8913003847045342,
+            "tau4_misclassification_margin": 5.551115123125783e-17,
+            "tau4_denom": 0.510491116411423,
+            "tau4_candidates": [
+              {
+                "tau4": 0.10664974389109247,
+                "tau4_method": "principal_rho_projected_to_positive_diff",
+                "tau4_gap": 0.04453056389799451,
+                "tau4_beta": 0.15262217265836237,
+                "tau4_competitor": 0,
+                "tau4_state_trace_distance": 0.8054325094190276,
+                "tau4_misclassification_margin": 0.0,
+                "tau4_denom": 0.2917699513928039
+              },
+              {
+                "tau4": 0.07151091595424824,
+                "tau4_method": "top_positive_diff_eigenvector",
+                "tau4_gap": 0.04453056389799451,
+                "tau4_beta": 0.08723083020725035,
+                "tau4_competitor": 0,
+                "tau4_state_trace_distance": 0.8913003847045342,
+                "tau4_misclassification_margin": 5.551115123125783e-17,
+                "tau4_denom": 0.510491116411423
+              },
+              {
+                "tau4": 0.4666267576495803,
+                "tau4_method": "positive_diff_eigenvector_0",
+                "tau4_gap": 0.04453056389799451,
+                "tau4_beta": 1.048206596522886,
+                "tau4_competitor": 0,
+                "tau4_state_trace_distance": 0.911793539844499,
+                "tau4_misclassification_margin": 0.0,
+                "tau4_denom": 0.04248262131311845
+              },
+              {
+                "tau4": 0.2856199293872061,
+                "tau4_method": "positive_diff_eigenvector_1",
+                "tau4_gap": 0.04453056389799451,
+                "tau4_beta": 0.41805866603284525,
+                "tau4_competitor": 0,
+                "tau4_state_trace_distance": 0.9688253084254824,
+                "tau4_misclassification_margin": 0.0,
+                "tau4_denom": 0.10651749985370693
+              },
+              {
+                "tau4": 0.12659686091210248,
+                "tau4_method": "positive_diff_eigenvector_2",
+                "tau4_gap": 0.04453056389799451,
+                "tau4_beta": 0.1554083338993932,
+                "tau4_competitor": 0,
+                "tau4_state_trace_distance": 0.9412047891719699,
+                "tau4_misclassification_margin": -1.1102230246251565e-16,
+                "tau4_denom": 0.2865390985197891
+              },
+              {
+                "tau4": 0.10926396591633918,
+                "tau4_method": "positive_diff_eigenvector_3",
+                "tau4_gap": 0.04453056389799451,
+                "tau4_beta": 0.13055676681557016,
+                "tau4_competitor": 0,
+                "tau4_state_trace_distance": 0.9461716849217428,
+                "tau4_misclassification_margin": 0.0,
+                "tau4_denom": 0.34108200581361064
+              },
+              {
+                "tau4": 0.09563552520349138,
+                "tau4_method": "positive_diff_eigenvector_4",
+                "tau4_gap": 0.04453056389799451,
+                "tau4_beta": 0.11203388788671514,
+                "tau4_competitor": 0,
+                "tau4_state_trace_distance": 0.9492658598054181,
+                "tau4_misclassification_margin": -5.551115123125783e-17,
+                "tau4_denom": 0.3974740566267083
+              }
+            ]
+          },
+          {
+            "tau4": 0.13044934236102868,
+            "tau4_method": "top_positive_diff_eigenvector",
+            "tau4_gap": 0.07311600690885106,
+            "tau4_beta": 0.1597308738764007,
+            "tau4_competitor": 1,
+            "tau4_state_trace_distance": 0.9471314226329367,
+            "tau4_misclassification_margin": -5.551115123125783e-17,
+            "tau4_denom": 0.45774498776878925,
+            "tau4_candidates": [
+              {
+                "tau4": 0.16718085534578772,
+                "tau4_method": "principal_rho_projected_to_positive_diff",
+                "tau4_gap": 0.07311600690885106,
+                "tau4_beta": 0.2560614999794849,
+                "tau4_competitor": 1,
+                "tau4_state_trace_distance": 0.8200742241621923,
+                "tau4_misclassification_margin": 0.0,
+                "tau4_denom": 0.28554080529368514
+              },
+              {
+                "tau4": 0.13044934236102868,
+                "tau4_method": "top_positive_diff_eigenvector",
+                "tau4_gap": 0.07311600690885106,
+                "tau4_beta": 0.1597308738764007,
+                "tau4_competitor": 1,
+                "tau4_state_trace_distance": 0.9471314226329367,
+                "tau4_misclassification_margin": -5.551115123125783e-17,
+                "tau4_denom": 0.45774498776878925
+              },
+              {
+                "tau4": 0.48740960948367335,
+                "tau4_method": "positive_diff_eigenvector_0",
+                "tau4_gap": 0.07311600690885106,
+                "tau4_beta": 1.0397390701213869,
+                "tau4_competitor": 1,
+                "tau4_state_trace_distance": 0.9561903098441682,
+                "tau4_misclassification_margin": -1.1102230246251565e-16,
+                "tau4_denom": 0.07032149604642149
+              },
+              {
+                "tau4": 0.26105247865722564,
+                "tau4_method": "positive_diff_eigenvector_1",
+                "tau4_gap": 0.07311600690885106,
+                "tau4_beta": 0.3840176845714568,
+                "tau4_competitor": 1,
+                "tau4_state_trace_distance": 0.9408453349381711,
+                "tau4_misclassification_margin": -2.7755575615628914e-17,
+                "tau4_denom": 0.1903974995069423
+              },
+              {
+                "tau4": 0.2218213728718089,
+                "tau4_method": "positive_diff_eigenvector_2",
+                "tau4_gap": 0.07311600690885106,
+                "tau4_beta": 0.30606223987069864,
+                "tau4_competitor": 1,
+                "tau4_state_trace_distance": 0.946580405431726,
+                "tau4_misclassification_margin": 8.326672684688674e-17,
+                "tau4_denom": 0.23889260870514506
+              },
+              {
+                "tau4": 0.17656253631563168,
+                "tau4_method": "positive_diff_eigenvector_3",
+                "tau4_gap": 0.07311600690885106,
+                "tau4_beta": 0.2558153414077223,
+                "tau4_competitor": 1,
+                "tau4_state_trace_distance": 0.8667577972567012,
+                "tau4_misclassification_margin": 0.0,
+                "tau4_denom": 0.2858155672232248
+              }
+            ]
+          },
+          {
+            "tau4": 0.05545058073169591,
+            "tau4_method": "top_positive_diff_eigenvector",
+            "tau4_gap": 0.026211108162511598,
+            "tau4_beta": 0.06300997764327623,
+            "tau4_competitor": 2,
+            "tau4_state_trace_distance": 0.9354791540732547,
+            "tau4_misclassification_margin": -5.551115123125783e-17,
+            "tau4_denom": 0.4159834544126136,
+            "tau4_candidates": [
+              {
+                "tau4": 0.14225369385445288,
+                "tau4_method": "principal_rho_projected_to_positive_diff",
+                "tau4_gap": 0.026211108162511598,
+                "tau4_beta": 0.23501777569726623,
+                "tau4_competitor": 2,
+                "tau4_state_trace_distance": 0.7475427764883308,
+                "tau4_misclassification_margin": -5.551115123125783e-17,
+                "tau4_denom": 0.1115281943450735
+              },
+              {
+                "tau4": 0.05545058073169591,
+                "tau4_method": "top_positive_diff_eigenvector",
+                "tau4_gap": 0.026211108162511598,
+                "tau4_beta": 0.06300997764327623,
+                "tau4_competitor": 2,
+                "tau4_state_trace_distance": 0.9354791540732547,
+                "tau4_misclassification_margin": -5.551115123125783e-17,
+                "tau4_denom": 0.4159834544126136
+              },
+              {
+                "tau4": 0.3936307493229385,
+                "tau4_method": "positive_diff_eigenvector_0",
+                "tau4_gap": 0.026211108162511598,
+                "tau4_beta": 0.8105686612491609,
+                "tau4_competitor": 2,
+                "tau4_state_trace_distance": 0.8792537053305355,
+                "tau4_misclassification_margin": -5.551115123125783e-17,
+                "tau4_denom": 0.03233669078954751
+              },
+              {
+                "tau4": 0.3408200137053773,
+                "tau4_method": "positive_diff_eigenvector_1",
+                "tau4_gap": 0.026211108162511598,
+                "tau4_beta": 0.6091633725288593,
+                "tau4_competitor": 2,
+                "tau4_state_trace_distance": 0.9003086978173411,
+                "tau4_misclassification_margin": 0.0,
+                "tau4_denom": 0.04302804361611521
+              },
+              {
+                "tau4": 0.21519586981730182,
+                "tau4_method": "positive_diff_eigenvector_2",
+                "tau4_gap": 0.026211108162511598,
+                "tau4_beta": 0.3171938118006988,
+                "tau4_competitor": 2,
+                "tau4_state_trace_distance": 0.8936324023449763,
+                "tau4_misclassification_margin": -5.551115123125783e-17,
+                "tau4_denom": 0.08263436166585976
+              },
+              {
+                "tau4": 0.12646137575187383,
+                "tau4_method": "positive_diff_eigenvector_3",
+                "tau4_gap": 0.026211108162511598,
+                "tau4_beta": 0.15750455085652712,
+                "tau4_competitor": 2,
+                "tau4_state_trace_distance": 0.9293675461714769,
+                "tau4_misclassification_margin": 5.551115123125783e-17,
+                "tau4_denom": 0.16641492591783985
+              },
+              {
+                "tau4": 0.10000325407023207,
+                "tau4_method": "positive_diff_eigenvector_4",
+                "tau4_gap": 0.026211108162511598,
+                "tau4_beta": 0.11506952802132252,
+                "tau4_competitor": 2,
+                "tau4_state_trace_distance": 0.9690713365577288,
+                "tau4_misclassification_margin": -5.551115123125783e-17,
+                "tau4_denom": 0.227784962823995
+              }
+            ]
+          }
+        ],
+        "predicted_index": 3,
+        "predicted_probabilities": [
+          0.24143385626978806,
+          0.2128484146786465,
+          0.25975331109542305,
+          0.2859644179561425
+        ],
+        "tau4_mode": "trajectory_low_rank_support_convex_mixture"
+      },
+      "tau5_report": {
+        "attack_mode": "trajectory_support_state_space",
+        "orig_pred": 3,
+        "orig_runner_up": 2,
+        "orig_probabilities": [
+          0.24143385626978806,
+          0.2128484146786465,
+          0.25975331109542305,
+          0.2859644179561425
+        ],
+        "tau_random": 1.0,
+        "tau_fgsm": 0.061199570827222285,
+        "tau_pgd": 0.07483835829747433,
+        "tau5_raw": 0.061199570827222285,
+        "tau5": 0.061199570827222285,
+        "tau5_attack_found": true,
+        "random": [
+          {
+            "beta": 0.01,
+            "trial": 0,
+            "success": false,
+            "adv_pred": 3,
+            "trace_distance": 0.009320948033712249,
+            "probabilities": [
+              0.24178184690689591,
+              0.21286141462273334,
+              0.2594409519193015,
+              0.28591578655106936
+            ]
+          },
+          {
+            "beta": 0.01,
+            "trial": 1,
+            "success": false,
+            "adv_pred": 3,
+            "trace_distance": 0.008880837903766908,
+            "probabilities": [
+              0.2410964433449664,
+              0.21271554172353316,
+              0.2602665879887489,
+              0.2859214269427516
+            ]
+          },
+          {
+            "beta": 0.01,
+            "trial": 2,
+            "success": false,
+            "adv_pred": 3,
+            "trace_distance": 0.009377922410962934,
+            "probabilities": [
+              0.24138730444485182,
+              0.21319880727391058,
+              0.25978487429232544,
+              0.2856290139889121
+            ]
+          },
+          {
+            "beta": 0.01,
+            "trial": 3,
+            "success": false,
+            "adv_pred": 3,
+            "trace_distance": 0.0094536898501693,
+            "probabilities": [
+              0.24161593291782507,
+              0.21331643351240365,
+              0.2593365245973284,
+              0.28573110897244297
+            ]
+          },
+          {
+            "beta": 0.02,
+            "trial": 0,
+            "success": false,
+            "adv_pred": 3,
+            "trace_distance": 0.018613045347746653,
+            "probabilities": [
+              0.24326802103799525,
+              0.21242714510827362,
+              0.2595969323583907,
+              0.2847079014953404
+            ]
+          },
+          {
+            "beta": 0.02,
+            "trial": 1,
+            "success": false,
+            "adv_pred": 3,
+            "trace_distance": 0.017894394292681443,
+            "probabilities": [
+              0.2425021630855331,
+              0.21359490125229177,
+              0.2586846261927495,
+              0.28521830946942556
+            ]
+          },
+          {
+            "beta": 0.02,
+            "trial": 2,
+            "success": false,
+            "adv_pred": 3,
+            "trace_distance": 0.01814865067849762,
+            "probabilities": [
+              0.24114036002699457,
+              0.21260115819441908,
+              0.25918801216538684,
+              0.2870704696131995
+            ]
+          },
+          {
+            "beta": 0.02,
+            "trial": 3,
+            "success": false,
+            "adv_pred": 3,
+            "trace_distance": 0.018694399339006528,
+            "probabilities": [
+              0.24329899221876217,
+              0.21368416080796165,
+              0.2580573652115114,
+              0.2849594817617648
+            ]
+          },
+          {
+            "beta": 0.03,
+            "trial": 0,
+            "success": false,
+            "adv_pred": 3,
+            "trace_distance": 0.026856360039688863,
+            "probabilities": [
+              0.24035905110124792,
+              0.2122364174414178,
+              0.2608177870485942,
+              0.2865867444087399
+            ]
+          },
+          {
+            "beta": 0.03,
+            "trial": 1,
+            "success": false,
+            "adv_pred": 3,
+            "trace_distance": 0.02506220888015382,
+            "probabilities": [
+              0.2421923978262672,
+              0.21380427000528465,
+              0.2582717443792149,
+              0.2857315877892333
+            ]
+          },
+          {
+            "beta": 0.03,
+            "trial": 2,
+            "success": false,
+            "adv_pred": 3,
+            "trace_distance": 0.027097871771229545,
+            "probabilities": [
+              0.23910885923094827,
+              0.2118078718481615,
+              0.2612389204141528,
+              0.2878443485067373
+            ]
+          },
+          {
+            "beta": 0.03,
+            "trial": 3,
+            "success": false,
+            "adv_pred": 3,
+            "trace_distance": 0.02725326968731454,
+            "probabilities": [
+              0.23931312975532454,
+              0.21166051915682693,
+              0.2602837701233694,
+              0.28874258096447925
+            ]
+          },
+          {
+            "beta": 0.05,
+            "trial": 0,
+            "success": false,
+            "adv_pred": 3,
+            "trace_distance": 0.04555728402314585,
+            "probabilities": [
+              0.2441063377987726,
+              0.21340194991942363,
+              0.2587757786533033,
+              0.2837159336285004
+            ]
+          },
+          {
+            "beta": 0.05,
+            "trial": 1,
+            "success": false,
+            "adv_pred": 3,
+            "trace_distance": 0.0445966457529322,
+            "probabilities": [
+              0.24274484943201496,
+              0.21285103875504774,
+              0.2580520520135701,
+              0.2863520597993672
+            ]
+          },
+          {
+            "beta": 0.05,
+            "trial": 2,
+            "success": false,
+            "adv_pred": 3,
+            "trace_distance": 0.04361599020682644,
+            "probabilities": [
+              0.2423623206837998,
+              0.2140569879538421,
+              0.2606459468005953,
+              0.28293474456176293
+            ]
+          },
+          {
+            "beta": 0.05,
+            "trial": 3,
+            "success": false,
+            "adv_pred": 3,
+            "trace_distance": 0.044544809890550235,
+            "probabilities": [
+              0.23909394684742902,
+              0.214196370363128,
+              0.2573297321123438,
+              0.2893799506770992
+            ]
+          },
+          {
+            "beta": 0.07,
+            "trial": 0,
+            "success": false,
+            "adv_pred": 3,
+            "trace_distance": 0.05789101350407304,
+            "probabilities": [
+              0.24661371161787246,
+              0.21454176944690248,
+              0.257948101095972,
+              0.280896417839253
+            ]
+          },
+          {
+            "beta": 0.07,
+            "trial": 1,
+            "success": false,
+            "adv_pred": 3,
+            "trace_distance": 0.06156375655177475,
+            "probabilities": [
+              0.24476407349757034,
+              0.21917285160557395,
+              0.2518178171004484,
+              0.28424525779640725
+            ]
+          },
+          {
+            "beta": 0.07,
+            "trial": 2,
+            "success": false,
+            "adv_pred": 3,
+            "trace_distance": 0.0619391688907187,
+            "probabilities": [
+              0.24324348718444636,
+              0.21356824067962737,
+              0.2579282643439896,
+              0.28526000779193655
+            ]
+          },
+          {
+            "beta": 0.07,
+            "trial": 3,
+            "success": false,
+            "adv_pred": 3,
+            "trace_distance": 0.05843973931862414,
+            "probabilities": [
+              0.2452292082159949,
+              0.21339915724360248,
+              0.25641319661265116,
+              0.2849584379277514
+            ]
+          },
+          {
+            "beta": 0.1,
+            "trial": 0,
+            "success": false,
+            "adv_pred": 3,
+            "trace_distance": 0.08478264592538232,
+            "probabilities": [
+              0.23192530633270936,
+              0.2131600530003304,
+              0.2651029029440902,
+              0.28981173772287006
+            ]
+          },
+          {
+            "beta": 0.1,
+            "trial": 1,
+            "success": false,
+            "adv_pred": 3,
+            "trace_distance": 0.08724106550092525,
+            "probabilities": [
+              0.24048542763442074,
+              0.21166568098338592,
+              0.25995071510024653,
+              0.28789817628194686
+            ]
+          },
+          {
+            "beta": 0.1,
+            "trial": 2,
+            "success": false,
+            "adv_pred": 3,
+            "trace_distance": 0.08354072416286995,
+            "probabilities": [
+              0.2433304282182112,
+              0.21458941627790207,
+              0.2554721995302526,
+              0.2866079559736341
+            ]
+          },
+          {
+            "beta": 0.1,
+            "trial": 3,
+            "success": false,
+            "adv_pred": 3,
+            "trace_distance": 0.0861808711499755,
+            "probabilities": [
+              0.2373189805837146,
+              0.218161035258597,
+              0.2550607678777066,
+              0.28945921627998167
+            ]
+          },
+          {
+            "beta": 0.12,
+            "trial": 0,
+            "success": false,
+            "adv_pred": 3,
+            "trace_distance": 0.09944807083794355,
+            "probabilities": [
+              0.2426116098939483,
+              0.21652364039079292,
+              0.25337881821436953,
+              0.2874859315008892
+            ]
+          },
+          {
+            "beta": 0.12,
+            "trial": 1,
+            "success": false,
+            "adv_pred": 3,
+            "trace_distance": 0.09716661676658045,
+            "probabilities": [
+              0.2489894459339126,
+              0.212384500504154,
+              0.2542031584577966,
+              0.2844228951041369
+            ]
+          },
+          {
+            "beta": 0.12,
+            "trial": 2,
+            "success": false,
+            "adv_pred": 3,
+            "trace_distance": 0.1019113793899637,
+            "probabilities": [
+              0.24014220606916153,
+              0.22041037940832003,
+              0.25403140452568723,
+              0.2854160099968312
+            ]
+          },
+          {
+            "beta": 0.12,
+            "trial": 3,
+            "success": false,
+            "adv_pred": 3,
+            "trace_distance": 0.10090950206228298,
+            "probabilities": [
+              0.24435618349738908,
+              0.2169714026951244,
+              0.2510177883452395,
+              0.28765462546224696
+            ]
+          },
+          {
+            "beta": 0.15,
+            "trial": 0,
+            "success": false,
+            "adv_pred": 3,
+            "trace_distance": 0.11735771277550268,
+            "probabilities": [
+              0.24113135908891184,
+              0.21814441828966005,
+              0.2554715653444206,
+              0.2852526572770076
+            ]
+          },
+          {
+            "beta": 0.15,
+            "trial": 1,
+            "success": false,
+            "adv_pred": 3,
+            "trace_distance": 0.12359407782152113,
+            "probabilities": [
+              0.24214899536657755,
+              0.21751399273773508,
+              0.25634289819769723,
+              0.2839941136979901
+            ]
+          },
+          {
+            "beta": 0.15,
+            "trial": 2,
+            "success": false,
+            "adv_pred": 3,
+            "trace_distance": 0.11965509286515835,
+            "probabilities": [
+              0.2382383305802202,
+              0.21684844914095058,
+              0.2634833675597036,
+              0.2814298527191258
+            ]
+          },
+          {
+            "beta": 0.15,
+            "trial": 3,
+            "success": false,
+            "adv_pred": 3,
+            "trace_distance": 0.12450055128298265,
+            "probabilities": [
+              0.24331521079745191,
+              0.2189102540814409,
+              0.2507004247847571,
+              0.28707411033635016
+            ]
+          },
+          {
+            "beta": 0.2,
+            "trial": 0,
+            "success": false,
+            "adv_pred": 3,
+            "trace_distance": 0.1587410482575772,
+            "probabilities": [
+              0.2308063038162618,
+              0.20658188338292105,
+              0.26566621646397126,
+              0.2969455963368458
+            ]
+          },
+          {
+            "beta": 0.2,
+            "trial": 1,
+            "success": false,
+            "adv_pred": 3,
+            "trace_distance": 0.15619654042788064,
+            "probabilities": [
+              0.24026742128452067,
+              0.21964243687809554,
+              0.26007375080559686,
+              0.280016391031787
+            ]
+          },
+          {
+            "beta": 0.2,
+            "trial": 2,
+            "success": false,
+            "adv_pred": 3,
+            "trace_distance": 0.1562026035650524,
+            "probabilities": [
+              0.23286164294497957,
+              0.2101172414882829,
+              0.2583912478387169,
+              0.2986298677280206
+            ]
+          },
+          {
+            "beta": 0.2,
+            "trial": 3,
+            "success": false,
+            "adv_pred": 3,
+            "trace_distance": 0.1596176277763828,
+            "probabilities": [
+              0.2470471272653559,
+              0.21196193064129668,
+              0.2516820225137487,
+              0.28930891957959853
+            ]
+          },
+          {
+            "beta": 0.3,
+            "trial": 0,
+            "success": false,
+            "adv_pred": 3,
+            "trace_distance": 0.21985649871026802,
+            "probabilities": [
+              0.23072111739735854,
+              0.21577879735876465,
+              0.2682404887503286,
+              0.28525959649354826
+            ]
+          },
+          {
+            "beta": 0.3,
+            "trial": 1,
+            "success": false,
+            "adv_pred": 3,
+            "trace_distance": 0.2086490330789957,
+            "probabilities": [
+              0.2428153605734392,
+              0.2236030062587582,
+              0.2542002450247052,
+              0.27938138814309754
+            ]
+          },
+          {
+            "beta": 0.3,
+            "trial": 2,
+            "success": false,
+            "adv_pred": 3,
+            "trace_distance": 0.2162832104488195,
+            "probabilities": [
+              0.24005189354570702,
+              0.20608797527904155,
+              0.2619822971951501,
+              0.29187783398010125
+            ]
+          },
+          {
+            "beta": 0.3,
+            "trial": 3,
+            "success": false,
+            "adv_pred": 3,
+            "trace_distance": 0.2170660539629869,
+            "probabilities": [
+              0.23700543597455356,
+              0.22333128811001973,
+              0.24904737673612412,
+              0.29061589917930253
+            ]
+          },
+          {
+            "beta": 0.4,
+            "trial": 0,
+            "success": false,
+            "adv_pred": 3,
+            "trace_distance": 0.269571020907453,
+            "probabilities": [
+              0.2533605022872439,
+              0.22521533727166554,
+              0.23535498939906027,
+              0.2860691710420302
+            ]
+          },
+          {
+            "beta": 0.4,
+            "trial": 1,
+            "success": false,
+            "adv_pred": 3,
+            "trace_distance": 0.256197857137624,
+            "probabilities": [
+              0.22233948710966447,
+              0.21682977628215774,
+              0.2563164884942971,
+              0.30451424811388056
+            ]
+          },
+          {
+            "beta": 0.4,
+            "trial": 2,
+            "success": false,
+            "adv_pred": 3,
+            "trace_distance": 0.2714217234053576,
+            "probabilities": [
+              0.2504650246181397,
+              0.22463137614611603,
+              0.2540613232694742,
+              0.2708422759662699
+            ]
+          },
+          {
+            "beta": 0.4,
+            "trial": 3,
+            "success": false,
+            "adv_pred": 3,
+            "trace_distance": 0.26476369514356274,
+            "probabilities": [
+              0.24965364476414365,
+              0.2024050592170125,
+              0.27292103527850364,
+              0.27502026074034025
+            ]
+          }
+        ],
+        "fgsm": [
+          {
+            "beta": 0.01,
+            "competitor": 0,
+            "success": false,
+            "adv_pred": 3,
+            "trace_distance": 0.00882475628420331,
+            "probabilities": [
+              0.2446928434468587,
+              0.21293715623738416,
+              0.2586418590376902,
+              0.28372814127806684
+            ],
+            "gradient_mode": "support_top_diff_eigenvector"
+          },
+          {
+            "beta": 0.02,
+            "competitor": 0,
+            "success": false,
+            "adv_pred": 3,
+            "trace_distance": 0.017476478131461477,
+            "probabilities": [
+              0.24788792891999026,
+              0.21302415776570582,
+              0.25755220015571334,
+              0.28153571315859055
+            ],
+            "gradient_mode": "support_top_diff_eigenvector"
+          },
+          {
+            "beta": 0.03,
+            "competitor": 0,
+            "success": false,
+            "adv_pred": 3,
+            "trace_distance": 0.025960205379743723,
+            "probabilities": [
+              0.25102097390370437,
+              0.21310946994410482,
+              0.25648369969685353,
+              0.2793858564553375
+            ],
+            "gradient_mode": "support_top_diff_eigenvector"
+          },
+          {
+            "beta": 0.05,
+            "competitor": 0,
+            "success": false,
+            "adv_pred": 3,
+            "trace_distance": 0.0424428754621207,
+            "probabilities": [
+              0.2571080327439442,
+              0.21327521931968116,
+              0.2544077559431852,
+              0.2752089919931895
+            ],
+            "gradient_mode": "support_top_diff_eigenvector"
+          },
+          {
+            "beta": 0.07,
+            "competitor": 0,
+            "success": false,
+            "adv_pred": 3,
+            "trace_distance": 0.05830937096197888,
+            "probabilities": [
+              0.26296753800106204,
+              0.2134347724574188,
+              0.2524094175572166,
+              0.2711882719843025
+            ],
+            "gradient_mode": "support_top_diff_eigenvector"
+          },
+          {
+            "beta": 0.1,
+            "competitor": 0,
+            "success": true,
+            "adv_pred": 0,
+            "trace_distance": 0.08102730770041223,
+            "probabilities": [
+              0.2713572841960563,
+              0.21366322354185255,
+              0.24954816031205512,
+              0.26543133195003593
+            ],
+            "gradient_mode": "support_top_diff_eigenvector"
+          },
+          {
+            "beta": 0.12,
+            "competitor": 0,
+            "success": true,
+            "adv_pred": 0,
+            "trace_distance": 0.09549646978977157,
+            "probabilities": [
+              0.276700753518091,
+              0.21380872512591545,
+              0.24772581194100518,
+              0.2617647094149883
+            ],
+            "gradient_mode": "support_top_diff_eigenvector"
+          },
+          {
+            "beta": 0.15,
+            "competitor": 0,
+            "success": true,
+            "adv_pred": 0,
+            "trace_distance": 0.11625657191798273,
+            "probabilities": [
+              0.28436747039763866,
+              0.21401748826897976,
+              0.24511113818230484,
+              0.2565039031510767
+            ],
+            "gradient_mode": "support_top_diff_eigenvector"
+          },
+          {
+            "beta": 0.2,
+            "competitor": 0,
+            "success": true,
+            "adv_pred": 0,
+            "trace_distance": 0.1485500641174224,
+            "probabilities": [
+              0.296293474493851,
+              0.2143422309376396,
+              0.2410438678700667,
+              0.24832042669844276
+            ],
+            "gradient_mode": "support_top_diff_eigenvector"
+          },
+          {
+            "beta": 0.3,
+            "competitor": 0,
+            "success": true,
+            "adv_pred": 0,
+            "trace_distance": 0.2056847041625849,
+            "probabilities": [
+              0.3173933280778342,
+              0.21491677566409748,
+              0.23384792802446802,
+              0.23384196823360032
+            ],
+            "gradient_mode": "support_top_diff_eigenvector"
+          },
+          {
+            "beta": 0.4,
+            "competitor": 0,
+            "success": true,
+            "adv_pred": 0,
+            "trace_distance": 0.2546572527727242,
+            "probabilities": [
+              0.33547891705020993,
+              0.21540924257755753,
+              0.22767997952191407,
+              0.22143186085031852
+            ],
+            "gradient_mode": "support_top_diff_eigenvector"
+          },
+          {
+            "beta": 0.01,
+            "competitor": 1,
+            "success": false,
+            "adv_pred": 3,
+            "trace_distance": 0.009377538837949891,
+            "probabilities": [
+              0.24164725418812014,
+              0.21602438596955545,
+              0.25844401967840497,
+              0.28388434016391956
+            ],
+            "gradient_mode": "support_top_diff_eigenvector"
+          },
+          {
+            "beta": 0.02,
+            "competitor": 1,
+            "success": false,
+            "adv_pred": 3,
+            "trace_distance": 0.018571204365351722,
+            "probabilities": [
+              0.24185646783420367,
+              0.21913808332340454,
+              0.25716040063806406,
+              0.28184504820432776
+            ],
+            "gradient_mode": "support_top_diff_eigenvector"
+          },
+          {
+            "beta": 0.03,
+            "competitor": 1,
+            "success": false,
+            "adv_pred": 3,
+            "trace_distance": 0.027586352115522426,
+            "probabilities": [
+              0.24206161908002688,
+              0.22219132054390267,
+              0.2559017062353906,
+              0.2798453541406799
+            ],
+            "gradient_mode": "support_top_diff_eigenvector"
+          },
+          {
+            "beta": 0.05,
+            "competitor": 1,
+            "success": false,
+            "adv_pred": 3,
+            "trace_distance": 0.04510149631585415,
+            "probabilities": [
+              0.24246019864513638,
+              0.22812332431331317,
+              0.25345624281346363,
+              0.2759602342280869
+            ],
+            "gradient_mode": "support_top_diff_eigenvector"
+          },
+          {
+            "beta": 0.07,
+            "competitor": 1,
+            "success": false,
+            "adv_pred": 3,
+            "trace_distance": 0.06196186877037906,
+            "probabilities": [
+              0.24284387804182747,
+              0.2338335709658029,
+              0.2511021985711362,
+              0.27222035242123327
+            ],
+            "gradient_mode": "support_top_diff_eigenvector"
+          },
+          {
+            "beta": 0.1,
+            "competitor": 1,
+            "success": false,
+            "adv_pred": 3,
+            "trace_distance": 0.08610285660299427,
+            "probabilities": [
+              0.24339323718182446,
+              0.24200960600243804,
+              0.24773163520069647,
+              0.26686552161504096
+            ],
+            "gradient_mode": "support_top_diff_eigenvector"
+          },
+          {
+            "beta": 0.12,
+            "competitor": 1,
+            "success": false,
+            "adv_pred": 3,
+            "trace_distance": 0.10147836671067181,
+            "probabilities": [
+              0.2437431266364326,
+              0.2472169616857195,
+              0.2455849073253543,
+              0.2634550043524936
+            ],
+            "gradient_mode": "support_top_diff_eigenvector"
+          },
+          {
+            "beta": 0.15,
+            "competitor": 1,
+            "success": false,
+            "adv_pred": 3,
+            "trace_distance": 0.1235388812129917,
+            "probabilities": [
+              0.24424514194406224,
+              0.25468838510488734,
+              0.24250481948462793,
+              0.2585616534664224
+            ],
+            "gradient_mode": "support_top_diff_eigenvector"
+          },
+          {
+            "beta": 0.2,
+            "competitor": 1,
+            "success": true,
+            "adv_pred": 1,
+            "trace_distance": 0.1578552371054895,
+            "probabilities": [
+              0.24502605465229652,
+              0.2663105994237624,
+              0.23771357168651164,
+              0.25094977423742937
+            ],
+            "gradient_mode": "support_top_diff_eigenvector"
+          },
+          {
+            "beta": 0.3,
+            "competitor": 1,
+            "success": true,
+            "adv_pred": 1,
+            "trace_distance": 0.21856878983837014,
+            "probabilities": [
+              0.24640766946608664,
+              0.2868729789351774,
+              0.22923674852226328,
+              0.2374826030764727
+            ],
+            "gradient_mode": "support_top_diff_eigenvector"
+          },
+          {
+            "beta": 0.4,
+            "competitor": 1,
+            "success": true,
+            "adv_pred": 1,
+            "trace_distance": 0.2706089778951249,
+            "probabilities": [
+              0.2475919107577273,
+              0.30449787599675815,
+              0.2219708999566262,
+              0.22593931328888833
+            ],
+            "gradient_mode": "support_top_diff_eigenvector"
+          },
+          {
+            "beta": 0.01,
+            "competitor": 2,
+            "success": false,
+            "adv_pred": 3,
+            "trace_distance": 0.009262169842309433,
+            "probabilities": [
+              0.24142949910569192,
+              0.21227515259565793,
+              0.262231202594817,
+              0.28406414570383315
+            ],
+            "gradient_mode": "support_top_diff_eigenvector"
+          },
+          {
+            "beta": 0.02,
+            "competitor": 2,
+            "success": false,
+            "adv_pred": 3,
+            "trace_distance": 0.0183427285112403,
+            "probabilities": [
+              0.2414252273761794,
+              0.21171313094481548,
+              0.26466050799006946,
+              0.2822011336889355
+            ],
+            "gradient_mode": "support_top_diff_eigenvector"
+          },
+          {
+            "beta": 0.03,
+            "competitor": 2,
+            "success": false,
+            "adv_pred": 3,
+            "trace_distance": 0.027246965652619064,
+            "probabilities": [
+              0.2414210385928649,
+              0.21116202233491635,
+              0.2670426424103209,
+              0.2803742966618979
+            ],
+            "gradient_mode": "support_top_diff_eigenvector"
+          },
+          {
+            "beta": 0.05,
+            "competitor": 2,
+            "success": false,
+            "adv_pred": 3,
+            "trace_distance": 0.044546626384440687,
+            "probabilities": [
+              0.24141290038526464,
+              0.21009129703336046,
+              0.27167078929399413,
+              0.27682501328738074
+            ],
+            "gradient_mode": "support_top_diff_eigenvector"
+          },
+          {
+            "beta": 0.07,
+            "competitor": 2,
+            "success": true,
+            "adv_pred": 2,
+            "trace_distance": 0.061199570827222285,
+            "probabilities": [
+              0.2414050664097022,
+              0.20906059884298375,
+              0.2761259213534196,
+              0.27340841339389454
+            ],
+            "gradient_mode": "support_top_diff_eigenvector"
+          },
+          {
+            "beta": 0.1,
+            "competitor": 2,
+            "success": true,
+            "adv_pred": 2,
+            "trace_distance": 0.08504355946120498,
+            "probabilities": [
+              0.24139384958101828,
+              0.2075848264290865,
+              0.28250486045989637,
+              0.2685164635299987
+            ],
+            "gradient_mode": "support_top_diff_eigenvector"
+          },
+          {
+            "beta": 0.12,
+            "competitor": 2,
+            "success": true,
+            "adv_pred": 2,
+            "trace_distance": 0.10022990936499168,
+            "probabilities": [
+              0.24138670552939304,
+              0.20664489994815,
+              0.28656763716584227,
+              0.2654007573566147
+            ],
+            "gradient_mode": "support_top_diff_eigenvector"
+          },
+          {
+            "beta": 0.15,
+            "competitor": 2,
+            "success": true,
+            "adv_pred": 2,
+            "trace_distance": 0.1220190200965115,
+            "probabilities": [
+              0.24137645536833402,
+              0.20529630977572094,
+              0.2923968385443944,
+              0.2609303963115508
+            ],
+            "gradient_mode": "support_top_diff_eigenvector"
+          },
+          {
+            "beta": 0.2,
+            "competitor": 2,
+            "success": true,
+            "adv_pred": 2,
+            "trace_distance": 0.1559131923455424,
+            "probabilities": [
+              0.24136051067327985,
+              0.20319850283115862,
+              0.30146448517506186,
+              0.25397650132049965
+            ],
+            "gradient_mode": "support_top_diff_eigenvector"
+          },
+          {
+            "beta": 0.3,
+            "competitor": 2,
+            "success": true,
+            "adv_pred": 2,
+            "trace_distance": 0.21587980478613572,
+            "probabilities": [
+              0.24133230082796475,
+              0.19948699820808735,
+              0.3175072447232344,
+              0.24167345624071349
+            ],
+            "gradient_mode": "support_top_diff_eigenvector"
+          },
+          {
+            "beta": 0.4,
+            "competitor": 2,
+            "success": true,
+            "adv_pred": 2,
+            "trace_distance": 0.2672797583066442,
+            "probabilities": [
+              0.24130812096032886,
+              0.19630570850183288,
+              0.3312581816056153,
+              0.23112798893222303
+            ],
+            "gradient_mode": "support_top_diff_eigenvector"
+          }
+        ],
+        "pgd": [
+          {
+            "step": 1,
+            "competitor": 2,
+            "success": true,
+            "adv_pred": 2,
+            "trace_distance": 0.07483835829747433,
+            "probabilities": [
+              0.24139865038370048,
+              0.20821645702294783,
+              0.27977467451924104,
+              0.2706102180741107
+            ],
+            "step_size": 0.08
+          }
+        ]
+      }
+    }
+  ],
+  "notes": [
+    "tau1/tau2 use the same TN spectral route as run_noisy_qcnn_tau123_scalability.",
+    "tau4 uses a low-rank trajectory approximation of rho and a convex-mixture constructive state in support space.",
+    "tau5 is a state-space empirical surrogate on the same support, with random / fgsm / pgd attack records.",
+    "These tau4/tau5 values are trajectory-support approximations, not exact dense-rho theorem outputs."
+  ],
+  "elapsed_seconds_total": 11.6891348361969
+}
