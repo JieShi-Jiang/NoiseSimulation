@@ -1,0 +1,19 @@
+# Runtime outputs
+logs/
+*.log
+*.out
+
+# Python caches
+__pycache__/
+**/__pycache__/
+*.py[cod]
+
+# Notebook / test / type-checker caches
+.ipynb_checkpoints/
+.pytest_cache/
+.mypy_cache/
+
+# OS / editor noise
+.DS_Store
+*.swp
+*.swo
